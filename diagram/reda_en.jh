@@ -74,23 +74,23 @@ entity Offer_Type {
     description String required
 }
 
-relationship OneToMany { Student to Contact_Information{student}}
-relationship OneToOne { Country to Contact_Information{country}}
-relationship OneToMany { Country to Province{country}}
-relationship OneToMany { Entreprise to Contact_Information{entreprise}}
-relationship OneToOne { Employee to Contact_Information{employee}}
-relationship OneToOne { Employee to Entreprise{employee}}
-relationship OneToMany { Employee to Offer{employee}}
-relationship OneToOne { Teacher to Contact_Information{teacher}}
-relationship OneToMany { Teacher to Cohort{teacher}}
-relationship OneToMany { Student to Cohort{student}}
-relationship OneToMany { Offer to Student_Offer{offer}}
-relationship OneToMany { Student to Student_Offer{student}}
-relationship OneToMany { Student_Offer to Interview{offer}}
+relationship OneToOne { Student{contact_information required} to Contact_Information}
+relationship OneToOne { Country to Contact_Information{country(name) required}}
+relationship OneToMany { Country{provinces required} to Province{country(name) required}}
+relationship OneToMany { Entreprise{contact_informations required} to Contact_Information}
+relationship OneToOne { Employee{contact_information required} to Contact_Information}
+relationship ManyToOne { Employee{entreprise(name) required} to Entreprise{employees required}}
+relationship OneToMany { Employee{offers required} to Offer{employee required}}
+relationship OneToOne { Teacher{contact_information required} to Contact_Information}
+relationship OneToMany { Teacher to Cohort{teacher}} /* ManyToMany? */
+relationship OneToMany { Student to Cohort{student}} /* ManyToMany? */
+relationship OneToMany { Offer to Student_Offer{offer required}}
+relationship OneToMany { Student to Student_Offer{student required}}
+relationship OneToMany { Student_Offer to Interview{student_offer}}
 relationship OneToMany { Interview to Internship{interview}}
-relationship OneToMany { Internship to Document{internship}}
-relationship OneToMany { Document_Type to Document{document_type}}
-relationship OneToMany { Technology to Offer{technology}}
-relationship OneToMany { Offer_Type to Offer{offer_type}}
+relationship OneToMany { Internship{documents(name) required} to Document{internship}}
+relationship OneToMany { Document_Type to Document{type(description) required}}
+relationship ManyToOne { Technology to Offer{technologies required}}
+relationship OneToMany { Offer_Type to Offer{type(description) required}}
 
 
