@@ -45,12 +45,15 @@ entity Offer {
     hourlyRate Float
     description String required
 }
+enum StudentOfferStatus {
+	PENDING, ACCEPTED, REFUSED
+}
 entity StudentOffer {
-	status Integer /* Qu'est-ce que c'est? Pourquoi Integer? */
+	status StudentOfferStatus
 }
 entity Interview {
 	date LocalDate required
-    result String /* Qu'est-ce que c'est? */
+    result String
 }
 entity Internship {
 	hourlyRate Integer
@@ -82,13 +85,13 @@ relationship OneToOne { Employee{contactInformation required} to ContactInformat
 relationship ManyToOne { Employee{entreprise(name)} to Entreprise{employees required}}
 relationship OneToMany { Employee{offers required} to Offer{employee}}
 relationship OneToOne { Teacher{contactInformation required} to ContactInformation}
-relationship OneToMany { Teacher to Cohort{teacher}} /* ManyToMany? */
-relationship OneToMany { Student to Cohort{student}} /* ManyToMany? */
+relationship OneToMany { Teacher to Cohort{teacher}}
+relationship OneToMany { Student to Cohort{student}}
 relationship OneToMany { Offer to StudentOffer{offer}}
 relationship OneToMany { Student to StudentOffer{student}}
 relationship OneToMany { StudentOffer to Interview{studentOffer}}
 relationship OneToMany { Interview to Internship{interview}}
 relationship OneToMany { Internship{documents(name) required} to Document{internship}}
 relationship OneToMany { DocumentType to Document{type(description)}}
-relationship OneToMany { Technology to Offer{technologies}}
+relationship ManyToOne { Technology to Offer{technologies required}}
 relationship OneToMany { OfferType to Offer{type(description)}}
