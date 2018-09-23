@@ -1,0 +1,96 @@
+entity Student {
+	registration_number Long required minlength(7) maxlength(7)
+	firstname String required
+    lastname String required
+    email String required pattern('/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/')
+    active Boolean required
+}
+entity Contact_Information {
+	street String required
+    civic_number Integer required
+    city String required
+    postal_code String required pattern('/^(?!.*[DFIOQU])[A-VXY][0-9][A-Z]●?[0-9][A-Z][0-9]$/')
+    apartment String
+    phone_number Integer required pattern('/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/')
+    phone_post Integer
+    fax_number Integer
+    fax_post Integer
+}
+entity Country {
+	name String required
+}
+entity Province {
+	name String required
+}
+entity Entreprise {
+	name String required
+}
+entity Employee {
+	lastname String required
+    firstname String required
+    job String required
+    email String required pattern('/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/')
+}
+entity Teacher {
+	registration_number Long required minlength(7) maxlength(7)
+    lastname String required
+    firstname String required
+    email String required pattern('/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/')
+}
+entity Cohort {
+	start_date LocalDate required
+}
+entity Offer {
+	weekly_hour Integer
+    hourly_rate Float
+    description String required
+}
+entity Student_Offer {
+	status Integer /* Qu'est-ce que c'est? Pourquoi Integer? */
+}
+entity Interview {
+	date LocalDate required
+    result String /* Qu'est-ce que c'est? */
+}
+entity Internship {
+	hourly_rate Integer
+    weekly_hour Integer
+    special_rate Integer
+    start Localdate required
+    end Localdate required
+}
+entity Document {
+	target AnyBlob required
+    name String required
+}
+entity Document_Type {
+	description String required
+}
+entity Technology {
+	name String required
+    description String required
+}
+entity Offer_Type {
+    description String required
+}
+
+relationship OneToMany { Student to Contact_Information{student}}
+relationship OneToOne { Country to Contact_Information{country}}
+relationship OneToMany { Country to Province{country}}
+relationship OneToMany { Entreprise to Contact_Information{entreprise}}
+relationship OneToOne { Employee to Contact_Information{employee}}
+relationship OneToOne { Employee to Entreprise{employee}}
+relationship OneToMany { Employee to Offer{employee}}
+relationship OneToOne { Teacher to Contact_Information{teacher}}
+relationship OneToMany { Teacher to Cohort{teacher}}
+relationship OneToMany { Student to Cohort{student}}
+relationship OneToMany { Offer to Student_Offer{offer}}
+relationship OneToMany { Student to Student_Offer{student}}
+relationship OneToMany { Student_Offer to Interview{offer}}
+relationship OneToMany { Interview to Internship{interview}}
+relationship OneToMany { Internship to Document{internship}}
+relationship OneToMany { Document_Type to Document{document_type}}
+relationship OneToMany { Technology to Offer{technology}}
+relationship OneToMany { Offer_Type to Offer{offer_type}}
+
+

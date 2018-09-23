@@ -1,0 +1,96 @@
+entity Etudiant {
+	matricule Long required minlength(7) maxlength(7)
+	prenom String required
+    nom String required
+    courriel String required
+    active Boolean
+}
+entity Coordonnees {
+	rue String
+    numero_civique Integer
+    ville String
+    code_postal String
+    appartement String
+    telephone Integer 
+    poste_telephone Integer
+    telecopieur Integer
+    poste_telecopier Integer
+}
+entity Pays {
+	nom String required
+}
+entity Province {
+	nom String required
+}
+entity Entreprise {
+	nom String required
+}
+entity Employe {
+	nom String required
+    prenom String required
+    poste String required
+    courriel String required
+}
+entity Professeur {
+	matricule Integer required
+    nom String required
+    prenom String required
+    courriel String required
+}
+entity Cohorte {
+	annee_debut LocalDate required
+}
+entity Offre {
+	nombre_heure_semaine Integer
+    taux_horraire Float
+    description String required
+}
+entity Offre_Etudiant {
+	status Integer
+}
+entity Entrevue {
+	date_entrevue LocalDate
+    resultat String
+}
+entity Stage {
+	taux_horaire Integer
+    nombre_heure_semaine Integer
+    salaire_special Integer
+    debut Localdate
+    fin Localdate
+}
+entity Document {
+	cible AnyBlob
+    nom String
+}
+entity Type_Doc {
+	description String required
+}
+entity Technologie {
+	nom String required
+    description String required
+}
+entity Type_Stage {
+    description String required
+}
+
+relationship OneToMany { Etudiant to Coordonnees{etudiant}}
+relationship OneToOne { Pays to Coordonnees{pays}}
+relationship OneToMany { Pays to Province{pays}}
+relationship OneToMany { Entreprise to Coordonnees{entreprise}}
+relationship OneToOne { Employe to Coordonnees{employe}}
+relationship OneToOne { Employe to Entreprise{employe}}
+relationship OneToMany { Employe to Offre{employe}}
+relationship OneToOne { Professeur to Coordonnees{professeur}}
+relationship OneToMany { Professeur to Cohorte{professeur}}
+relationship OneToMany { Etudiant to Cohorte{etudiant}}
+relationship OneToMany { Offre to Offre_Etudiant{offre}}
+relationship OneToMany { Etudiant to Offre_Etudiant{etudiant}}
+relationship OneToMany { Offre_Etudiant to Entrevue{offre}}
+relationship OneToMany { Entrevue to Stage{entrevue}}
+relationship OneToMany { Stage to Document{stage}}
+relationship OneToMany { Type_Doc to Document{type}}
+relationship OneToMany { Technologie to Offre{technologie}}
+relationship OneToMany { Type_Stage to Offre{type}}
+
+
