@@ -23,7 +23,7 @@ export interface IOfferUpdateProps extends StateProps, DispatchProps, RouteCompo
 export interface IOfferUpdateState {
   isNew: boolean;
   employeeId: string;
-  typeId: string;
+  offerTypeId: string;
 }
 
 export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdateState> {
@@ -31,7 +31,7 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
     super(props);
     this.state = {
       employeeId: '0',
-      typeId: '0',
+      offerTypeId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -136,15 +136,15 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
-                  <Label for="type.description">
-                    <Translate contentKey="redaApp.offer.type">Type</Translate>
+                  <Label for="offerType.id">
+                    <Translate contentKey="redaApp.offer.offerType">Offer Type</Translate>
                   </Label>
-                  <AvInput id="offer-type" type="select" className="form-control" name="type.id">
+                  <AvInput id="offer-offerType" type="select" className="form-control" name="offerType.id">
                     <option value="" key="0" />
                     {offerTypes
                       ? offerTypes.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.description}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}

@@ -3,8 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.Entreprise;
-import com.reda.reda.domain.ContactInformation;
-import com.reda.reda.domain.Employee;
 import com.reda.reda.repository.EntrepriseRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -83,16 +81,6 @@ public class EntrepriseResourceIntTest {
     public static Entreprise createEntity(EntityManager em) {
         Entreprise entreprise = new Entreprise()
             .name(DEFAULT_NAME);
-        // Add required entity
-        ContactInformation contactInformation = ContactInformationResourceIntTest.createEntity(em);
-        em.persist(contactInformation);
-        em.flush();
-        entreprise.getContactInformations().add(contactInformation);
-        // Add required entity
-        Employee employee = EmployeeResourceIntTest.createEntity(em);
-        em.persist(employee);
-        em.flush();
-        entreprise.getEmployees().add(employee);
         return entreprise;
     }
 

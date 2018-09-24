@@ -44,8 +44,7 @@ public class Teacher implements Serializable {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @OneToOne(optional = false)
-    @NotNull
+    @OneToOne
     @JoinColumn(unique = true)
     private ContactInformation contactInformation;
 

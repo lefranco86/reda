@@ -3,7 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.Internship;
-import com.reda.reda.domain.Document;
 import com.reda.reda.repository.InternshipRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -100,11 +99,6 @@ public class InternshipResourceIntTest {
             .specialRate(DEFAULT_SPECIAL_RATE)
             .start(DEFAULT_START)
             .end(DEFAULT_END);
-        // Add required entity
-        Document document = DocumentResourceIntTest.createEntity(em);
-        em.persist(document);
-        em.flush();
-        internship.getDocuments().add(document);
         return internship;
     }
 

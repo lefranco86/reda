@@ -56,17 +56,38 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "relationshipValidateRules": "required",
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "contactInformation"
+        },
+        {
+            "relationshipType": "one-to-one",
             "relationshipName": "country",
             "otherEntityName": "country",
             "ownerSide": false,
-            "otherEntityRelationshipName": "country"
+            "otherEntityRelationshipName": "contactInformation"
         },
         {
+            "relationshipType": "one-to-one",
             "relationshipName": "entreprise",
             "otherEntityName": "entreprise",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "ownerSide": false,
+            "otherEntityRelationshipName": "contactInformation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "contactInformation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "teacher",
+            "otherEntityName": "teacher",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "contactInformation"
         }
     ],
     "changelogDate": "20180923170957",

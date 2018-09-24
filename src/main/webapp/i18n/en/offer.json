@@ -21,8 +21,8 @@
             "description": "Description",
             "studentOffer": "Student Offer",
             "employee": "Employee",
-            "type": "Type",
-            "technologies": "Technologies"
+            "offerType": "Offer Type",
+            "technology": "Technology"
         }
     }
 }

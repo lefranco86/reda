@@ -14,7 +14,7 @@
             "relationshipType": "one-to-many",
             "relationshipName": "document",
             "otherEntityName": "document",
-            "otherEntityRelationshipName": "type"
+            "otherEntityRelationshipName": "documentType"
         }
     ],
     "changelogDate": "20180923171009",

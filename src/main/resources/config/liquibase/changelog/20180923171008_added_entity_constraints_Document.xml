@@ -14,9 +14,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="internship"/>
 
-        <addForeignKeyConstraint baseColumnNames="type_id"
+        <addForeignKeyConstraint baseColumnNames="document_type_id"
                                  baseTableName="document"
-                                 constraintName="fk_document_type_id"
+                                 constraintName="fk_document_document_type_id"
                                  referencedColumnNames="id"
                                  referencedTableName="document_type"/>
 

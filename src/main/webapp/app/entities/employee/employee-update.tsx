@@ -163,7 +163,7 @@ export class EmployeeUpdate extends React.Component<IEmployeeUpdateProps, IEmplo
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
-                  <Label for="entreprise.name">
+                  <Label for="entreprise.id">
                     <Translate contentKey="redaApp.employee.entreprise">Entreprise</Translate>
                   </Label>
                   <AvInput id="employee-entreprise" type="select" className="form-control" name="entreprise.id">
@@ -171,7 +171,7 @@ export class EmployeeUpdate extends React.Component<IEmployeeUpdateProps, IEmplo
                     {entreprises
                       ? entreprises.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.name}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}

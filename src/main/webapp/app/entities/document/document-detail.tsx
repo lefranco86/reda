@@ -57,9 +57,9 @@ export class DocumentDetail extends React.Component<IDocumentDetailProps> {
             </dt>
             <dd>{documentEntity.internship ? documentEntity.internship.id : ''}</dd>
             <dt>
-              <Translate contentKey="redaApp.document.type">Type</Translate>
+              <Translate contentKey="redaApp.document.documentType">Document Type</Translate>
             </dt>
-            <dd>{documentEntity.type ? documentEntity.type.description : ''}</dd>
+            <dd>{documentEntity.documentType ? documentEntity.documentType.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/document" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

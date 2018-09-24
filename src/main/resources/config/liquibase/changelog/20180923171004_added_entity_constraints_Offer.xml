@@ -14,9 +14,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="employee"/>
 
-        <addForeignKeyConstraint baseColumnNames="type_id"
+        <addForeignKeyConstraint baseColumnNames="offer_type_id"
                                  baseTableName="offer"
-                                 constraintName="fk_offer_type_id"
+                                 constraintName="fk_offer_offer_type_id"
                                  referencedColumnNames="id"
                                  referencedTableName="offer_type"/>
 

@@ -51,7 +51,7 @@ export class Offer extends React.Component<IOfferProps> {
                   <Translate contentKey="redaApp.offer.employee">Employee</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="redaApp.offer.type">Type</Translate>
+                  <Translate contentKey="redaApp.offer.offerType">Offer Type</Translate>
                 </th>
                 <th />
               </tr>
@@ -68,7 +68,7 @@ export class Offer extends React.Component<IOfferProps> {
                   <td>{offer.hourlyRate}</td>
                   <td>{offer.description}</td>
                   <td>{offer.employee ? <Link to={`employee/${offer.employee.id}`}>{offer.employee.id}</Link> : ''}</td>
-                  <td>{offer.type ? <Link to={`offer-type/${offer.type.id}`}>{offer.type.description}</Link> : ''}</td>
+                  <td>{offer.offerType ? <Link to={`offer-type/${offer.offerType.id}`}>{offer.offerType.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${offer.id}`} color="info" size="sm">

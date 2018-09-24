@@ -3,7 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.Teacher;
-import com.reda.reda.domain.ContactInformation;
 import com.reda.reda.repository.TeacherRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -94,11 +93,6 @@ public class TeacherResourceIntTest {
             .lastname(DEFAULT_LASTNAME)
             .firstname(DEFAULT_FIRSTNAME)
             .email(DEFAULT_EMAIL);
-        // Add required entity
-        ContactInformation contactInformation = ContactInformationResourceIntTest.createEntity(em);
-        em.persist(contactInformation);
-        em.flush();
-        teacher.setContactInformation(contactInformation);
         return teacher;
     }
 

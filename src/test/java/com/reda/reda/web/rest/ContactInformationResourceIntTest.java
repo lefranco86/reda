@@ -3,7 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.ContactInformation;
-import com.reda.reda.domain.Country;
 import com.reda.reda.repository.ContactInformationRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -114,11 +113,6 @@ public class ContactInformationResourceIntTest {
             .phonePost(DEFAULT_PHONE_POST)
             .faxNumber(DEFAULT_FAX_NUMBER)
             .faxPost(DEFAULT_FAX_POST);
-        // Add required entity
-        Country country = CountryResourceIntTest.createEntity(em);
-        em.persist(country);
-        em.flush();
-        contactInformation.setCountry(country);
         return contactInformation;
     }
 

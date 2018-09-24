@@ -56,7 +56,7 @@ export class Province extends React.Component<IProvinceProps> {
                     </Button>
                   </td>
                   <td>{province.name}</td>
-                  <td>{province.country ? <Link to={`country/${province.country.id}`}>{province.country.name}</Link> : ''}</td>
+                  <td>{province.country ? <Link to={`country/${province.country.id}`}>{province.country.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${province.id}`} color="info" size="sm">

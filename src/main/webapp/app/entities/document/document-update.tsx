@@ -23,7 +23,7 @@ export interface IDocumentUpdateProps extends StateProps, DispatchProps, RouteCo
 export interface IDocumentUpdateState {
   isNew: boolean;
   internshipId: string;
-  typeId: string;
+  documentTypeId: string;
 }
 
 export class DocumentUpdate extends React.Component<IDocumentUpdateProps, IDocumentUpdateState> {
@@ -31,7 +31,7 @@ export class DocumentUpdate extends React.Component<IDocumentUpdateProps, IDocum
     super(props);
     this.state = {
       internshipId: '0',
-      typeId: '0',
+      documentTypeId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -171,15 +171,15 @@ export class DocumentUpdate extends React.Component<IDocumentUpdateProps, IDocum
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
-                  <Label for="type.description">
-                    <Translate contentKey="redaApp.document.type">Type</Translate>
+                  <Label for="documentType.id">
+                    <Translate contentKey="redaApp.document.documentType">Document Type</Translate>
                   </Label>
-                  <AvInput id="document-type" type="select" className="form-control" name="type.id">
+                  <AvInput id="document-documentType" type="select" className="form-control" name="documentType.id">
                     <option value="" key="0" />
                     {documentTypes
                       ? documentTypes.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.description}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}

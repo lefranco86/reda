@@ -21,7 +21,7 @@
             "specialRate": "Special Rate",
             "start": "Start",
             "end": "End",
-            "documents": "Documents",
+            "document": "Document",
             "interview": "Interview"
         }
     }

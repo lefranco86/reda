@@ -10,7 +10,7 @@ export interface IOffer {
   description?: string;
   studentOffers?: IStudentOffer[];
   employee?: IEmployee;
-  type?: IOfferType;
+  offerType?: IOfferType;
   technologies?: ITechnology[];
 }
 

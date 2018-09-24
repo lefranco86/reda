@@ -33,7 +33,6 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "relationshipValidateRules": "required",
             "relationshipName": "contactInformation",
             "otherEntityName": "contactInformation",
             "otherEntityField": "id",
@@ -42,8 +41,7 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "offers",
+            "relationshipName": "offer",
             "otherEntityName": "offer",
             "otherEntityRelationshipName": "employee"
         },
@@ -51,7 +49,7 @@
             "relationshipType": "many-to-one",
             "relationshipName": "entreprise",
             "otherEntityName": "entreprise",
-            "otherEntityField": "name"
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20180923171001",

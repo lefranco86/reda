@@ -41,6 +41,9 @@ export class Entreprise extends React.Component<IEntrepriseProps> {
                 <th>
                   <Translate contentKey="redaApp.entreprise.name">Name</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="redaApp.entreprise.contactInformation">Contact Information</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -53,6 +56,13 @@ export class Entreprise extends React.Component<IEntrepriseProps> {
                     </Button>
                   </td>
                   <td>{entreprise.name}</td>
+                  <td>
+                    {entreprise.contactInformation ? (
+                      <Link to={`contact-information/${entreprise.contactInformation.id}`}>{entreprise.contactInformation.id}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${entreprise.id}`} color="info" size="sm">

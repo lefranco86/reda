@@ -11,16 +11,16 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "contactInformations",
+            "relationshipType": "one-to-one",
+            "relationshipName": "contactInformation",
             "otherEntityName": "contactInformation",
+            "otherEntityField": "id",
+            "ownerSide": true,
             "otherEntityRelationshipName": "entreprise"
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "employees",
+            "relationshipName": "employee",
             "otherEntityName": "employee",
             "otherEntityRelationshipName": "entreprise"
         }

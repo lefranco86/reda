@@ -1,7 +1,6 @@
 package com.reda.reda.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -58,13 +57,25 @@ public class ContactInformation implements Serializable {
     @Column(name = "fax_post")
     private Integer faxPost;
 
-    @OneToOne(mappedBy = "country")
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
+    private Student student;
+
+    @OneToOne(mappedBy = "contactInformation")
     @JsonIgnore
     private Country country;
 
-    @ManyToOne
-    @JsonIgnoreProperties("contactInformations")
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
     private Entreprise entreprise;
+
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
+    private Employee employee;
+
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
+    private Teacher teacher;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -192,6 +203,19 @@ public class ContactInformation implements Serializable {
         this.faxPost = faxPost;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public ContactInformation student(Student student) {
+        this.student = student;
+        return this;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     public Country getCountry() {
         return country;
     }
@@ -216,6 +240,32 @@ public class ContactInformation implements Serializable {
 
     public void setEntreprise(Entreprise entreprise) {
         this.entreprise = entreprise;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public ContactInformation employee(Employee employee) {
+        this.employee = employee;
+        return this;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public ContactInformation teacher(Teacher teacher) {
+        this.teacher = teacher;
+        return this;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -83,13 +83,13 @@ public class Country implements Serializable {
         return this;
     }
 
-    public Country addProvinces(Province province) {
+    public Country addProvince(Province province) {
         this.provinces.add(province);
         province.setCountry(this);
         return this;
     }
 
-    public Country removeProvinces(Province province) {
+    public Country removeProvince(Province province) {
         this.provinces.remove(province);
         province.setCountry(null);
         return this;

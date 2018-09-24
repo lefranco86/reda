@@ -32,14 +32,13 @@
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "type",
+            "relationshipName": "offerType",
             "otherEntityName": "offerType",
-            "otherEntityField": "description"
+            "otherEntityField": "id"
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "technologies",
+            "relationshipName": "technology",
             "otherEntityName": "technology",
             "otherEntityRelationshipName": "offer"
         }

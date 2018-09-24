@@ -18,7 +18,7 @@
             },
             "name": "Name",
             "contactInformation": "Contact Information",
-            "provinces": "Provinces"
+            "province": "Province"
         }
     }
 }

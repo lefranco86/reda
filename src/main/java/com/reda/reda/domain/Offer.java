@@ -48,7 +48,7 @@ public class Offer implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("offers")
-    private OfferType type;
+    private OfferType offerType;
 
     @OneToMany(mappedBy = "offer")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -140,17 +140,17 @@ public class Offer implements Serializable {
         this.employee = employee;
     }
 
-    public OfferType getType() {
-        return type;
+    public OfferType getOfferType() {
+        return offerType;
     }
 
-    public Offer type(OfferType offerType) {
-        this.type = offerType;
+    public Offer offerType(OfferType offerType) {
+        this.offerType = offerType;
         return this;
     }
 
-    public void setType(OfferType offerType) {
-        this.type = offerType;
+    public void setOfferType(OfferType offerType) {
+        this.offerType = offerType;
     }
 
     public Set<Technology> getTechnologies() {
@@ -162,13 +162,13 @@ public class Offer implements Serializable {
         return this;
     }
 
-    public Offer addTechnologies(Technology technology) {
+    public Offer addTechnology(Technology technology) {
         this.technologies.add(technology);
         technology.setOffer(this);
         return this;
     }
 
-    public Offer removeTechnologies(Technology technology) {
+    public Offer removeTechnology(Technology technology) {
         this.technologies.remove(technology);
         technology.setOffer(null);
         return this;

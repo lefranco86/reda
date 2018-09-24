@@ -14,7 +14,7 @@
             "relationshipType": "one-to-many",
             "relationshipName": "offer",
             "otherEntityName": "offer",
-            "otherEntityRelationshipName": "type"
+            "otherEntityRelationshipName": "offerType"
         }
     ],
     "changelogDate": "20180923171011",

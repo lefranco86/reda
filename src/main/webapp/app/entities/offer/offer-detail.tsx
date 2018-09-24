@@ -51,9 +51,9 @@ export class OfferDetail extends React.Component<IOfferDetailProps> {
             </dt>
             <dd>{offerEntity.employee ? offerEntity.employee.id : ''}</dd>
             <dt>
-              <Translate contentKey="redaApp.offer.type">Type</Translate>
+              <Translate contentKey="redaApp.offer.offerType">Offer Type</Translate>
             </dt>
-            <dd>{offerEntity.type ? offerEntity.type.description : ''}</dd>
+            <dd>{offerEntity.offerType ? offerEntity.offerType.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/offer" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

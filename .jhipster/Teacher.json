@@ -37,7 +37,6 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "relationshipValidateRules": "required",
             "relationshipName": "contactInformation",
             "otherEntityName": "contactInformation",
             "otherEntityField": "id",

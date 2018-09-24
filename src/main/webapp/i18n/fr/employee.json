@@ -21,7 +21,7 @@
             "job": "Job",
             "email": "Email",
             "contactInformation": "Contact Information",
-            "offers": "Offers",
+            "offer": "Offer",
             "entreprise": "Entreprise"
         }
     }

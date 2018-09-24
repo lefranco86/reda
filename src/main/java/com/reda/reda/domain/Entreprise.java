@@ -31,9 +31,9 @@ public class Entreprise implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "entreprise")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<ContactInformation> contactInformations = new HashSet<>();
+    @OneToOne
+    @JoinColumn(unique = true)
+    private ContactInformation contactInformation;
 
     @OneToMany(mappedBy = "entreprise")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -61,29 +61,17 @@ public class Entreprise implements Serializable {
         this.name = name;
     }
 
-    public Set<ContactInformation> getContactInformations() {
-        return contactInformations;
+    public ContactInformation getContactInformation() {
+        return contactInformation;
     }
 
-    public Entreprise contactInformations(Set<ContactInformation> contactInformations) {
-        this.contactInformations = contactInformations;
+    public Entreprise contactInformation(ContactInformation contactInformation) {
+        this.contactInformation = contactInformation;
         return this;
     }
 
-    public Entreprise addContactInformations(ContactInformation contactInformation) {
-        this.contactInformations.add(contactInformation);
-        contactInformation.setEntreprise(this);
-        return this;
-    }
-
-    public Entreprise removeContactInformations(ContactInformation contactInformation) {
-        this.contactInformations.remove(contactInformation);
-        contactInformation.setEntreprise(null);
-        return this;
-    }
-
-    public void setContactInformations(Set<ContactInformation> contactInformations) {
-        this.contactInformations = contactInformations;
+    public void setContactInformation(ContactInformation contactInformation) {
+        this.contactInformation = contactInformation;
     }
 
     public Set<Employee> getEmployees() {
@@ -95,13 +83,13 @@ public class Entreprise implements Serializable {
         return this;
     }
 
-    public Entreprise addEmployees(Employee employee) {
+    public Entreprise addEmployee(Employee employee) {
         this.employees.add(employee);
         employee.setEntreprise(this);
         return this;
     }
 
-    public Entreprise removeEmployees(Employee employee) {
+    public Entreprise removeEmployee(Employee employee) {
         this.employees.remove(employee);
         employee.setEntreprise(null);
         return this;

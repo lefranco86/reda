@@ -3,8 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.Employee;
-import com.reda.reda.domain.ContactInformation;
-import com.reda.reda.domain.Offer;
 import com.reda.reda.repository.EmployeeRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -95,16 +93,6 @@ public class EmployeeResourceIntTest {
             .firstname(DEFAULT_FIRSTNAME)
             .job(DEFAULT_JOB)
             .email(DEFAULT_EMAIL);
-        // Add required entity
-        ContactInformation contactInformation = ContactInformationResourceIntTest.createEntity(em);
-        em.persist(contactInformation);
-        em.flush();
-        employee.setContactInformation(contactInformation);
-        // Add required entity
-        Offer offer = OfferResourceIntTest.createEntity(em);
-        em.persist(offer);
-        em.flush();
-        employee.getOffers().add(offer);
         return employee;
     }
 

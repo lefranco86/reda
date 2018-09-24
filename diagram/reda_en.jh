@@ -77,21 +77,21 @@ entity OfferType {
     description String required
 }
 
-relationship OneToOne { Student{contactInformation required} to ContactInformation}
-relationship OneToOne { Country to ContactInformation{country(name) required}}
-relationship OneToMany { Country{provinces required} to Province{country(name)}}
-relationship OneToMany { Entreprise{contactInformations required} to ContactInformation}
-relationship OneToOne { Employee{contactInformation required} to ContactInformation}
-relationship ManyToOne { Employee{entreprise(name)} to Entreprise{employees required}}
-relationship OneToMany { Employee{offers required} to Offer{employee}}
-relationship OneToOne { Teacher{contactInformation required} to ContactInformation}
-relationship OneToMany { Teacher to Cohort{teacher}}
-relationship OneToMany { Student to Cohort{student}}
-relationship OneToMany { Offer to StudentOffer{offer}}
-relationship OneToMany { Student to StudentOffer{student}}
-relationship OneToMany { StudentOffer to Interview{studentOffer}}
-relationship OneToMany { Interview to Internship{interview}}
-relationship OneToMany { Internship{documents(name) required} to Document{internship}}
-relationship OneToMany { DocumentType to Document{type(description)}}
-relationship ManyToOne { Technology{offer} to Offer{technologies required}}
-relationship OneToMany { OfferType to Offer{type(description)}}
+relationship OneToOne { Student to ContactInformation }
+relationship OneToOne { Country to ContactInformation}
+relationship OneToMany { Country to Province}
+relationship OneToOne { Entreprise to ContactInformation}
+relationship OneToOne { Employee to ContactInformation}
+relationship ManyToOne { Employee to Entreprise}
+relationship OneToMany { Employee to Offer}
+relationship OneToOne { Teacher to ContactInformation}
+relationship OneToMany { Teacher to Cohort}
+relationship OneToMany { Student to Cohort}
+relationship OneToMany { Offer to StudentOffer}
+relationship OneToMany { Student to StudentOffer}
+relationship OneToMany { StudentOffer to Interview}
+relationship OneToMany { Interview to Internship}
+relationship OneToMany { Internship to Document}
+relationship OneToMany { DocumentType to Document}
+relationship ManyToOne { Technology to Offer}
+relationship OneToMany { OfferType to Offer}

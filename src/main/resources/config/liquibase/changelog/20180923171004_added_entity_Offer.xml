@@ -37,7 +37,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="type_id" type="bigint">
+            <column name="offer_type_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

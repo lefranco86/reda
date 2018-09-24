@@ -3,7 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.Country;
-import com.reda.reda.domain.Province;
 import com.reda.reda.repository.CountryRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -82,11 +81,6 @@ public class CountryResourceIntTest {
     public static Country createEntity(EntityManager em) {
         Country country = new Country()
             .name(DEFAULT_NAME);
-        // Add required entity
-        Province province = ProvinceResourceIntTest.createEntity(em);
-        em.persist(province);
-        em.flush();
-        country.getProvinces().add(province);
         return country;
     }
 

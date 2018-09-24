@@ -34,6 +34,10 @@ export class EntrepriseDetail extends React.Component<IEntrepriseDetailProps> {
               </span>
             </dt>
             <dd>{entrepriseEntity.name}</dd>
+            <dt>
+              <Translate contentKey="redaApp.entreprise.contactInformation">Contact Information</Translate>
+            </dt>
+            <dd>{entrepriseEntity.contactInformation ? entrepriseEntity.contactInformation.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/entreprise" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

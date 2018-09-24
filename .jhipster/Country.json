@@ -16,12 +16,11 @@
             "otherEntityName": "contactInformation",
             "otherEntityField": "id",
             "ownerSide": true,
-            "otherEntityRelationshipName": "country(name)"
+            "otherEntityRelationshipName": "country"
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "provinces",
+            "relationshipName": "province",
             "otherEntityName": "province",
             "otherEntityRelationshipName": "country"
         }
