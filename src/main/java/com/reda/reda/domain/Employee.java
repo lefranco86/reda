@@ -44,8 +44,7 @@ public class Employee implements Serializable {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @OneToOne(optional = false)
-    @NotNull
+    @OneToOne
     @JoinColumn(unique = true)
     private ContactInformation contactInformation;
 
@@ -140,13 +139,13 @@ public class Employee implements Serializable {
         return this;
     }
 
-    public Employee addOffers(Offer offer) {
+    public Employee addOffer(Offer offer) {
         this.offers.add(offer);
         offer.setEmployee(this);
         return this;
     }
 
-    public Employee removeOffers(Offer offer) {
+    public Employee removeOffer(Offer offer) {
         this.offers.remove(offer);
         offer.setEmployee(null);
         return this;

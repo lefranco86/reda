@@ -4,7 +4,7 @@ import { IEmployee } from 'app/shared/model//employee.model';
 export interface IEntreprise {
   id?: number;
   name?: string;
-  contactInformations?: IContactInformation[];
+  contactInformation?: IContactInformation;
   employees?: IEmployee[];
 }
 

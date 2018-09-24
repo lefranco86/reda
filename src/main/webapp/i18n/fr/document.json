@@ -19,7 +19,7 @@
             "target": "Target",
             "name": "Name",
             "internship": "Internship",
-            "type": "Type"
+            "documentType": "Document Type"
         }
     }
 }

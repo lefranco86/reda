@@ -8,6 +8,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { IContactInformation } from 'app/shared/model/contact-information.model';
+import { getEntities as getContactInformations } from 'app/entities/contact-information/contact-information.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './entreprise.reducer';
 import { IEntreprise } from 'app/shared/model/entreprise.model';
 // tslint:disable-next-line:no-unused-variable
@@ -18,12 +20,14 @@ export interface IEntrepriseUpdateProps extends StateProps, DispatchProps, Route
 
 export interface IEntrepriseUpdateState {
   isNew: boolean;
+  contactInformationId: string;
 }
 
 export class EntrepriseUpdate extends React.Component<IEntrepriseUpdateProps, IEntrepriseUpdateState> {
   constructor(props) {
     super(props);
     this.state = {
+      contactInformationId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -34,6 +38,8 @@ export class EntrepriseUpdate extends React.Component<IEntrepriseUpdateProps, IE
     } else {
       this.props.getEntity(this.props.match.params.id);
     }
+
+    this.props.getContactInformations();
   }
 
   saveEntity = (event, errors, values) => {
@@ -58,7 +64,7 @@ export class EntrepriseUpdate extends React.Component<IEntrepriseUpdateProps, IE
   };
 
   render() {
-    const { entrepriseEntity, loading, updating } = this.props;
+    const { entrepriseEntity, contactInformations, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -97,6 +103,21 @@ export class EntrepriseUpdate extends React.Component<IEntrepriseUpdateProps, IE
                     }}
                   />
                 </AvGroup>
+                <AvGroup>
+                  <Label for="contactInformation.id">
+                    <Translate contentKey="redaApp.entreprise.contactInformation">Contact Information</Translate>
+                  </Label>
+                  <AvInput id="entreprise-contactInformation" type="select" className="form-control" name="contactInformation.id">
+                    <option value="" key="0" />
+                    {contactInformations
+                      ? contactInformations.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.id}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/entreprise" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;
@@ -120,12 +141,14 @@ export class EntrepriseUpdate extends React.Component<IEntrepriseUpdateProps, IE
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
+  contactInformations: storeState.contactInformation.entities,
   entrepriseEntity: storeState.entreprise.entity,
   loading: storeState.entreprise.loading,
   updating: storeState.entreprise.updating
 });
 
 const mapDispatchToProps = {
+  getContactInformations,
   getEntity,
   updateEntity,
   createEntity,

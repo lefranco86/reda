@@ -31,13 +31,13 @@ public class Country implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private ContactInformation contactInformation;
-
     @OneToMany(mappedBy = "country")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Province> provinces = new HashSet<>();
+
+    @OneToOne(mappedBy = "country")
+    @JsonIgnore
+    private ContactInformation contactInformation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -61,6 +61,31 @@ public class Country implements Serializable {
         this.name = name;
     }
 
+    public Set<Province> getProvinces() {
+        return provinces;
+    }
+
+    public Country provinces(Set<Province> provinces) {
+        this.provinces = provinces;
+        return this;
+    }
+
+    public Country addProvince(Province province) {
+        this.provinces.add(province);
+        province.setCountry(this);
+        return this;
+    }
+
+    public Country removeProvince(Province province) {
+        this.provinces.remove(province);
+        province.setCountry(null);
+        return this;
+    }
+
+    public void setProvinces(Set<Province> provinces) {
+        this.provinces = provinces;
+    }
+
     public ContactInformation getContactInformation() {
         return contactInformation;
     }
@@ -72,31 +97,6 @@ public class Country implements Serializable {
 
     public void setContactInformation(ContactInformation contactInformation) {
         this.contactInformation = contactInformation;
-    }
-
-    public Set<Province> getProvinces() {
-        return provinces;
-    }
-
-    public Country provinces(Set<Province> provinces) {
-        this.provinces = provinces;
-        return this;
-    }
-
-    public Country addProvinces(Province province) {
-        this.provinces.add(province);
-        province.setCountry(this);
-        return this;
-    }
-
-    public Country removeProvinces(Province province) {
-        this.provinces.remove(province);
-        province.setCountry(null);
-        return this;
-    }
-
-    public void setProvinces(Set<Province> provinces) {
-        this.provinces = provinces;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

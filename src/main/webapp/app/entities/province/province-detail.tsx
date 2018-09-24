@@ -37,7 +37,7 @@ export class ProvinceDetail extends React.Component<IProvinceDetailProps> {
             <dt>
               <Translate contentKey="redaApp.province.country">Country</Translate>
             </dt>
-            <dd>{provinceEntity.country ? provinceEntity.country.name : ''}</dd>
+            <dd>{provinceEntity.country ? provinceEntity.country.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/province" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

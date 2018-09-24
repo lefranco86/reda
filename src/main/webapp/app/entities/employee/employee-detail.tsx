@@ -59,7 +59,7 @@ export class EmployeeDetail extends React.Component<IEmployeeDetailProps> {
             <dt>
               <Translate contentKey="redaApp.employee.entreprise">Entreprise</Translate>
             </dt>
-            <dd>{employeeEntity.entreprise ? employeeEntity.entreprise.name : ''}</dd>
+            <dd>{employeeEntity.entreprise ? employeeEntity.entreprise.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/employee" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

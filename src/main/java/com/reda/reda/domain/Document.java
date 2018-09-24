@@ -43,7 +43,7 @@ public class Document implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("documents")
-    private DocumentType type;
+    private DocumentType documentType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -106,17 +106,17 @@ public class Document implements Serializable {
         this.internship = internship;
     }
 
-    public DocumentType getType() {
-        return type;
+    public DocumentType getDocumentType() {
+        return documentType;
     }
 
-    public Document type(DocumentType documentType) {
-        this.type = documentType;
+    public Document documentType(DocumentType documentType) {
+        this.documentType = documentType;
         return this;
     }
 
-    public void setType(DocumentType documentType) {
-        this.type = documentType;
+    public void setDocumentType(DocumentType documentType) {
+        this.documentType = documentType;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

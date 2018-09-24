@@ -137,13 +137,13 @@ public class Internship implements Serializable {
         return this;
     }
 
-    public Internship addDocuments(Document document) {
+    public Internship addDocument(Document document) {
         this.documents.add(document);
         document.setInternship(this);
         return this;
     }
 
-    public Internship removeDocuments(Document document) {
+    public Internship removeDocument(Document document) {
         this.documents.remove(document);
         document.setInternship(null);
         return this;

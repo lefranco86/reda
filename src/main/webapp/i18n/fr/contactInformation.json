@@ -26,6 +26,9 @@
             "faxNumber": "Fax Number",
             "faxPost": "Fax Post",
             "country": "Country",
+            "student": "Student",
+            "employee": "Employee",
+            "teacher": "Teacher",
             "entreprise": "Entreprise"
         }
     }

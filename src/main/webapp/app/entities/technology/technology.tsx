@@ -44,9 +44,6 @@ export class Technology extends React.Component<ITechnologyProps> {
                 <th>
                   <Translate contentKey="redaApp.technology.description">Description</Translate>
                 </th>
-                <th>
-                  <Translate contentKey="redaApp.technology.offer">Offer</Translate>
-                </th>
                 <th />
               </tr>
             </thead>
@@ -60,7 +57,6 @@ export class Technology extends React.Component<ITechnologyProps> {
                   </td>
                   <td>{technology.name}</td>
                   <td>{technology.description}</td>
-                  <td>{technology.offer ? <Link to={`offer/${technology.offer.id}`}>{technology.offer.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${technology.id}`} color="info" size="sm">

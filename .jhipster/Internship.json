@@ -31,8 +31,7 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "documents",
+            "relationshipName": "document",
             "otherEntityName": "document",
             "otherEntityRelationshipName": "internship"
         },

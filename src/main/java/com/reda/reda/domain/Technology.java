@@ -1,6 +1,6 @@
 package com.reda.reda.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -33,9 +35,9 @@ public class Technology implements Serializable {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @ManyToOne
-    @JsonIgnoreProperties("technologies")
-    private Offer offer;
+    @OneToMany(mappedBy = "technology")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Offer> offers = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -72,17 +74,29 @@ public class Technology implements Serializable {
         this.description = description;
     }
 
-    public Offer getOffer() {
-        return offer;
+    public Set<Offer> getOffers() {
+        return offers;
     }
 
-    public Technology offer(Offer offer) {
-        this.offer = offer;
+    public Technology offers(Set<Offer> offers) {
+        this.offers = offers;
         return this;
     }
 
-    public void setOffer(Offer offer) {
-        this.offer = offer;
+    public Technology addOffer(Offer offer) {
+        this.offers.add(offer);
+        offer.setTechnology(this);
+        return this;
+    }
+
+    public Technology removeOffer(Offer offer) {
+        this.offers.remove(offer);
+        offer.setTechnology(null);
+        return this;
+    }
+
+    public void setOffers(Set<Offer> offers) {
+        this.offers = offers;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

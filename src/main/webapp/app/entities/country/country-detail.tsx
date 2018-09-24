@@ -34,10 +34,6 @@ export class CountryDetail extends React.Component<ICountryDetailProps> {
               </span>
             </dt>
             <dd>{countryEntity.name}</dd>
-            <dt>
-              <Translate contentKey="redaApp.country.contactInformation">Contact Information</Translate>
-            </dt>
-            <dd>{countryEntity.contactInformation ? countryEntity.contactInformation.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/country" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -11,18 +11,16 @@
     ],
     "relationships": [
         {
+            "relationshipType": "one-to-many",
+            "relationshipName": "province",
+            "otherEntityName": "province",
+            "otherEntityRelationshipName": "country"
+        },
+        {
             "relationshipType": "one-to-one",
             "relationshipName": "contactInformation",
             "otherEntityName": "contactInformation",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "country(name)"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "provinces",
-            "otherEntityName": "province",
+            "ownerSide": false,
             "otherEntityRelationshipName": "country"
         }
     ],

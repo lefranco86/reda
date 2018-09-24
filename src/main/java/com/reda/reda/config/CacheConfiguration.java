@@ -69,6 +69,7 @@ public class CacheConfiguration {
             cm.createCache(com.reda.reda.domain.OfferType.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.OfferType.class.getName() + ".offers", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Offer.class.getName() + ".technologies", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.ContactInformation.class.getName() + ".entreprises", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -44,15 +44,15 @@ public class Offer implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("offers")
+    private Technology technology;
+
+    @ManyToOne
+    @JsonIgnoreProperties("offers")
     private Employee employee;
 
     @ManyToOne
     @JsonIgnoreProperties("offers")
-    private OfferType type;
-
-    @OneToMany(mappedBy = "offer")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Technology> technologies = new HashSet<>();
+    private OfferType offerType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -127,6 +127,19 @@ public class Offer implements Serializable {
         this.studentOffers = studentOffers;
     }
 
+    public Technology getTechnology() {
+        return technology;
+    }
+
+    public Offer technology(Technology technology) {
+        this.technology = technology;
+        return this;
+    }
+
+    public void setTechnology(Technology technology) {
+        this.technology = technology;
+    }
+
     public Employee getEmployee() {
         return employee;
     }
@@ -140,42 +153,17 @@ public class Offer implements Serializable {
         this.employee = employee;
     }
 
-    public OfferType getType() {
-        return type;
+    public OfferType getOfferType() {
+        return offerType;
     }
 
-    public Offer type(OfferType offerType) {
-        this.type = offerType;
+    public Offer offerType(OfferType offerType) {
+        this.offerType = offerType;
         return this;
     }
 
-    public void setType(OfferType offerType) {
-        this.type = offerType;
-    }
-
-    public Set<Technology> getTechnologies() {
-        return technologies;
-    }
-
-    public Offer technologies(Set<Technology> technologies) {
-        this.technologies = technologies;
-        return this;
-    }
-
-    public Offer addTechnologies(Technology technology) {
-        this.technologies.add(technology);
-        technology.setOffer(this);
-        return this;
-    }
-
-    public Offer removeTechnologies(Technology technology) {
-        this.technologies.remove(technology);
-        technology.setOffer(null);
-        return this;
-    }
-
-    public void setTechnologies(Set<Technology> technologies) {
-        this.technologies = technologies;
+    public void setOfferType(OfferType offerType) {
+        this.offerType = offerType;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

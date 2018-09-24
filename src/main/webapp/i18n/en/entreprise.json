@@ -17,8 +17,8 @@
                 "title": "Entreprise"
             },
             "name": "Name",
-            "contactInformations": "Contact Informations",
-            "employees": "Employees"
+            "contactInformation": "Contact Information",
+            "employee": "Employee"
         }
     }
 }

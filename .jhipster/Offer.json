@@ -26,22 +26,21 @@
         },
         {
             "relationshipType": "many-to-one",
+            "relationshipName": "technology",
+            "otherEntityName": "technology",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
             "relationshipName": "employee",
             "otherEntityName": "employee",
             "otherEntityField": "id"
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "type",
+            "relationshipName": "offerType",
             "otherEntityName": "offerType",
-            "otherEntityField": "description"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "relationshipValidateRules": "required",
-            "relationshipName": "technologies",
-            "otherEntityName": "technology",
-            "otherEntityRelationshipName": "offer"
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20180923171004",

@@ -33,11 +33,15 @@
                 <constraints nullable="false" />
             </column>
 
+            <column name="technology_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <column name="employee_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
-            <column name="type_id" type="bigint">
+            <column name="offer_type_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

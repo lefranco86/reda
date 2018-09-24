@@ -1,7 +1,6 @@
 package com.reda.reda.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -9,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -58,13 +59,25 @@ public class ContactInformation implements Serializable {
     @Column(name = "fax_post")
     private Integer faxPost;
 
-    @OneToOne(mappedBy = "country")
-    @JsonIgnore
+    @OneToOne
+    @JoinColumn(unique = true)
     private Country country;
 
-    @ManyToOne
-    @JsonIgnoreProperties("contactInformations")
-    private Entreprise entreprise;
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
+    private Student student;
+
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
+    private Employee employee;
+
+    @OneToOne(mappedBy = "contactInformation")
+    @JsonIgnore
+    private Teacher teacher;
+
+    @OneToMany(mappedBy = "contactInformation")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Entreprise> entreprises = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -205,17 +218,68 @@ public class ContactInformation implements Serializable {
         this.country = country;
     }
 
-    public Entreprise getEntreprise() {
-        return entreprise;
+    public Student getStudent() {
+        return student;
     }
 
-    public ContactInformation entreprise(Entreprise entreprise) {
-        this.entreprise = entreprise;
+    public ContactInformation student(Student student) {
+        this.student = student;
         return this;
     }
 
-    public void setEntreprise(Entreprise entreprise) {
-        this.entreprise = entreprise;
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public ContactInformation employee(Employee employee) {
+        this.employee = employee;
+        return this;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public ContactInformation teacher(Teacher teacher) {
+        this.teacher = teacher;
+        return this;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Set<Entreprise> getEntreprises() {
+        return entreprises;
+    }
+
+    public ContactInformation entreprises(Set<Entreprise> entreprises) {
+        this.entreprises = entreprises;
+        return this;
+    }
+
+    public ContactInformation addEntreprise(Entreprise entreprise) {
+        this.entreprises.add(entreprise);
+        entreprise.setContactInformation(this);
+        return this;
+    }
+
+    public ContactInformation removeEntreprise(Entreprise entreprise) {
+        this.entreprises.remove(entreprise);
+        entreprise.setContactInformation(null);
+        return this;
+    }
+
+    public void setEntreprises(Set<Entreprise> entreprises) {
+        this.entreprises = entreprises;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

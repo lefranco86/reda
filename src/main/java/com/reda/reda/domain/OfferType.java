@@ -31,7 +31,7 @@ public class OfferType implements Serializable {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @OneToMany(mappedBy = "type")
+    @OneToMany(mappedBy = "offerType")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Offer> offers = new HashSet<>();
 
@@ -68,13 +68,13 @@ public class OfferType implements Serializable {
 
     public OfferType addOffer(Offer offer) {
         this.offers.add(offer);
-        offer.setType(this);
+        offer.setOfferType(this);
         return this;
     }
 
     public OfferType removeOffer(Offer offer) {
         this.offers.remove(offer);
-        offer.setType(null);
+        offer.setOfferType(null);
         return this;
     }
 

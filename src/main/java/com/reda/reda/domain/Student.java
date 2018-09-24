@@ -48,8 +48,7 @@ public class Student implements Serializable {
     @Column(name = "active", nullable = false)
     private Boolean active;
 
-    @OneToOne(optional = false)
-    @NotNull
+    @OneToOne
     @JoinColumn(unique = true)
     private ContactInformation contactInformation;
 

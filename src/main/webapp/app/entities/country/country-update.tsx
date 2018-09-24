@@ -103,21 +103,6 @@ export class CountryUpdate extends React.Component<ICountryUpdateProps, ICountry
                     }}
                   />
                 </AvGroup>
-                <AvGroup>
-                  <Label for="contactInformation.id">
-                    <Translate contentKey="redaApp.country.contactInformation">Contact Information</Translate>
-                  </Label>
-                  <AvInput id="country-contactInformation" type="select" className="form-control" name="contactInformation.id">
-                    <option value="" key="0" />
-                    {contactInformations
-                      ? contactInformations.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/country" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;

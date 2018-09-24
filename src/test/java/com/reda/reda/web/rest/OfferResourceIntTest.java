@@ -3,7 +3,6 @@ package com.reda.reda.web.rest;
 import com.reda.reda.RedaApp;
 
 import com.reda.reda.domain.Offer;
-import com.reda.reda.domain.Technology;
 import com.reda.reda.repository.OfferRepository;
 import com.reda.reda.web.rest.errors.ExceptionTranslator;
 
@@ -90,11 +89,6 @@ public class OfferResourceIntTest {
             .weeklyHour(DEFAULT_WEEKLY_HOUR)
             .hourlyRate(DEFAULT_HOURLY_RATE)
             .description(DEFAULT_DESCRIPTION);
-        // Add required entity
-        Technology technology = TechnologyResourceIntTest.createEntity(em);
-        em.persist(technology);
-        em.flush();
-        offer.getTechnologies().add(technology);
         return offer;
     }
 

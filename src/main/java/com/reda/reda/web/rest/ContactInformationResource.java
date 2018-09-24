@@ -88,11 +88,25 @@ public class ContactInformationResource {
     @GetMapping("/contact-informations")
     @Timed
     public List<ContactInformation> getAllContactInformations(@RequestParam(required = false) String filter) {
-        if ("country-is-null".equals(filter)) {
-            log.debug("REST request to get all ContactInformations where country is null");
+        if ("student-is-null".equals(filter)) {
+            log.debug("REST request to get all ContactInformations where student is null");
             return StreamSupport
                 .stream(contactInformationRepository.findAll().spliterator(), false)
-                .filter(contactInformation -> contactInformation.getCountry() == null)
+                .filter(contactInformation -> contactInformation.getStudent() == null)
+                .collect(Collectors.toList());
+        }
+        if ("employee-is-null".equals(filter)) {
+            log.debug("REST request to get all ContactInformations where employee is null");
+            return StreamSupport
+                .stream(contactInformationRepository.findAll().spliterator(), false)
+                .filter(contactInformation -> contactInformation.getEmployee() == null)
+                .collect(Collectors.toList());
+        }
+        if ("teacher-is-null".equals(filter)) {
+            log.debug("REST request to get all ContactInformations where teacher is null");
+            return StreamSupport
+                .stream(contactInformationRepository.findAll().spliterator(), false)
+                .filter(contactInformation -> contactInformation.getTeacher() == null)
                 .collect(Collectors.toList());
         }
         log.debug("REST request to get all ContactInformations");

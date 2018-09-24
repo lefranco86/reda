@@ -7,7 +7,7 @@ export interface IDocument {
   target?: any;
   name?: string;
   internship?: IInternship;
-  type?: IDocumentType;
+  documentType?: IDocumentType;
 }
 
 export const defaultValue: Readonly<IDocument> = {};

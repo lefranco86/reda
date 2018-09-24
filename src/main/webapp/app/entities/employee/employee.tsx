@@ -78,7 +78,7 @@ export class Employee extends React.Component<IEmployeeProps> {
                       ''
                     )}
                   </td>
-                  <td>{employee.entreprise ? <Link to={`entreprise/${employee.entreprise.id}`}>{employee.entreprise.name}</Link> : ''}</td>
+                  <td>{employee.entreprise ? <Link to={`entreprise/${employee.entreprise.id}`}>{employee.entreprise.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${employee.id}`} color="info" size="sm">

@@ -8,6 +8,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { ITechnology } from 'app/shared/model/technology.model';
+import { getEntities as getTechnologies } from 'app/entities/technology/technology.reducer';
 import { IEmployee } from 'app/shared/model/employee.model';
 import { getEntities as getEmployees } from 'app/entities/employee/employee.reducer';
 import { IOfferType } from 'app/shared/model/offer-type.model';
@@ -22,16 +24,18 @@ export interface IOfferUpdateProps extends StateProps, DispatchProps, RouteCompo
 
 export interface IOfferUpdateState {
   isNew: boolean;
+  technologyId: string;
   employeeId: string;
-  typeId: string;
+  offerTypeId: string;
 }
 
 export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdateState> {
   constructor(props) {
     super(props);
     this.state = {
+      technologyId: '0',
       employeeId: '0',
-      typeId: '0',
+      offerTypeId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -43,6 +47,7 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
       this.props.getEntity(this.props.match.params.id);
     }
 
+    this.props.getTechnologies();
     this.props.getEmployees();
     this.props.getOfferTypes();
   }
@@ -69,7 +74,7 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
   };
 
   render() {
-    const { offerEntity, employees, offerTypes, loading, updating } = this.props;
+    const { offerEntity, technologies, employees, offerTypes, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -121,6 +126,21 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
                   />
                 </AvGroup>
                 <AvGroup>
+                  <Label for="technology.id">
+                    <Translate contentKey="redaApp.offer.technology">Technology</Translate>
+                  </Label>
+                  <AvInput id="offer-technology" type="select" className="form-control" name="technology.id">
+                    <option value="" key="0" />
+                    {technologies
+                      ? technologies.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.id}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                <AvGroup>
                   <Label for="employee.id">
                     <Translate contentKey="redaApp.offer.employee">Employee</Translate>
                   </Label>
@@ -136,15 +156,15 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
-                  <Label for="type.description">
-                    <Translate contentKey="redaApp.offer.type">Type</Translate>
+                  <Label for="offerType.id">
+                    <Translate contentKey="redaApp.offer.offerType">Offer Type</Translate>
                   </Label>
-                  <AvInput id="offer-type" type="select" className="form-control" name="type.id">
+                  <AvInput id="offer-offerType" type="select" className="form-control" name="offerType.id">
                     <option value="" key="0" />
                     {offerTypes
                       ? offerTypes.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.description}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}
@@ -173,6 +193,7 @@ export class OfferUpdate extends React.Component<IOfferUpdateProps, IOfferUpdate
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
+  technologies: storeState.technology.entities,
   employees: storeState.employee.entities,
   offerTypes: storeState.offerType.entities,
   offerEntity: storeState.offer.entity,
@@ -181,6 +202,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getTechnologies,
   getEmployees,
   getOfferTypes,
   getEntity,

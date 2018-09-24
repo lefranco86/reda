@@ -48,7 +48,7 @@ export class Document extends React.Component<IDocumentProps> {
                   <Translate contentKey="redaApp.document.internship">Internship</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="redaApp.document.type">Type</Translate>
+                  <Translate contentKey="redaApp.document.documentType">Document Type</Translate>
                 </th>
                 <th />
               </tr>
@@ -76,7 +76,9 @@ export class Document extends React.Component<IDocumentProps> {
                   </td>
                   <td>{document.name}</td>
                   <td>{document.internship ? <Link to={`internship/${document.internship.id}`}>{document.internship.id}</Link> : ''}</td>
-                  <td>{document.type ? <Link to={`document-type/${document.type.id}`}>{document.type.description}</Link> : ''}</td>
+                  <td>
+                    {document.documentType ? <Link to={`document-type/${document.documentType.id}`}>{document.documentType.id}</Link> : ''}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${document.id}`} color="info" size="sm">

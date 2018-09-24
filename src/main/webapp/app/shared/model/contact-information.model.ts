@@ -1,4 +1,7 @@
 import { ICountry } from 'app/shared/model//country.model';
+import { IStudent } from 'app/shared/model//student.model';
+import { IEmployee } from 'app/shared/model//employee.model';
+import { ITeacher } from 'app/shared/model//teacher.model';
 import { IEntreprise } from 'app/shared/model//entreprise.model';
 
 export interface IContactInformation {
@@ -13,7 +16,10 @@ export interface IContactInformation {
   faxNumber?: number;
   faxPost?: number;
   country?: ICountry;
-  entreprise?: IEntreprise;
+  student?: IStudent;
+  employee?: IEmployee;
+  teacher?: ITeacher;
+  entreprises?: IEntreprise[];
 }
 
 export const defaultValue: Readonly<IContactInformation> = {};

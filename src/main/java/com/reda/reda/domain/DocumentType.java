@@ -31,7 +31,7 @@ public class DocumentType implements Serializable {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @OneToMany(mappedBy = "type")
+    @OneToMany(mappedBy = "documentType")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Document> documents = new HashSet<>();
 
@@ -68,13 +68,13 @@ public class DocumentType implements Serializable {
 
     public DocumentType addDocument(Document document) {
         this.documents.add(document);
-        document.setType(this);
+        document.setDocumentType(this);
         return this;
     }
 
     public DocumentType removeDocument(Document document) {
         this.documents.remove(document);
-        document.setType(null);
+        document.setDocumentType(null);
         return this;
     }
 

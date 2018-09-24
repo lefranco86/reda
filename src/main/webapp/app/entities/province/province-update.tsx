@@ -104,7 +104,7 @@ export class ProvinceUpdate extends React.Component<IProvinceUpdateProps, IProvi
                   />
                 </AvGroup>
                 <AvGroup>
-                  <Label for="country.name">
+                  <Label for="country.id">
                     <Translate contentKey="redaApp.province.country">Country</Translate>
                   </Label>
                   <AvInput id="province-country" type="select" className="form-control" name="country.id">
@@ -112,7 +112,7 @@ export class ProvinceUpdate extends React.Component<IProvinceUpdateProps, IProvi
                     {countries
                       ? countries.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.name}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}
