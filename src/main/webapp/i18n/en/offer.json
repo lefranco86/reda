@@ -20,9 +20,9 @@
             "hourlyRate": "Hourly Rate",
             "description": "Description",
             "studentOffer": "Student Offer",
+            "technology": "Technology",
             "employee": "Employee",
-            "offerType": "Offer Type",
-            "technology": "Technology"
+            "offerType": "Offer Type"
         }
     }
 }

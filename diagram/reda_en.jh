@@ -77,21 +77,21 @@ entity OfferType {
     description String required
 }
 
+relationship OneToMany { Country to Province }
+relationship OneToOne { ContactInformation to Country }
 relationship OneToOne { Student to ContactInformation }
-relationship OneToOne { Country to ContactInformation}
-relationship OneToMany { Country to Province}
-relationship OneToOne { Entreprise to ContactInformation}
-relationship OneToOne { Employee to ContactInformation}
-relationship ManyToOne { Employee to Entreprise}
-relationship OneToMany { Employee to Offer}
-relationship OneToOne { Teacher to ContactInformation}
-relationship OneToMany { Teacher to Cohort}
-relationship OneToMany { Student to Cohort}
-relationship OneToMany { Offer to StudentOffer}
-relationship OneToMany { Student to StudentOffer}
-relationship OneToMany { StudentOffer to Interview}
-relationship OneToMany { Interview to Internship}
-relationship OneToMany { Internship to Document}
-relationship OneToMany { DocumentType to Document}
-relationship ManyToOne { Technology to Offer}
-relationship OneToMany { OfferType to Offer}
+relationship ManyToOne { Entreprise to ContactInformation }
+relationship OneToOne { Employee to ContactInformation }
+relationship ManyToOne { Employee to Entreprise }
+relationship OneToMany { Employee to Offer }
+relationship OneToOne { Teacher to ContactInformation }
+relationship OneToMany { Teacher to Cohort }
+relationship OneToMany { Student to Cohort }
+relationship OneToMany { Offer to StudentOffer }
+relationship OneToMany { Student to StudentOffer }
+relationship OneToMany { StudentOffer to Interview }
+relationship OneToMany { Interview to Internship }
+relationship OneToMany { Internship to Document }
+relationship OneToMany { DocumentType to Document }
+relationship ManyToOne { Offer to Technology }
+relationship OneToMany { OfferType to Offer }

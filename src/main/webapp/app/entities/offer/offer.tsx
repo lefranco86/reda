@@ -48,6 +48,9 @@ export class Offer extends React.Component<IOfferProps> {
                   <Translate contentKey="redaApp.offer.description">Description</Translate>
                 </th>
                 <th>
+                  <Translate contentKey="redaApp.offer.technology">Technology</Translate>
+                </th>
+                <th>
                   <Translate contentKey="redaApp.offer.employee">Employee</Translate>
                 </th>
                 <th>
@@ -67,6 +70,7 @@ export class Offer extends React.Component<IOfferProps> {
                   <td>{offer.weeklyHour}</td>
                   <td>{offer.hourlyRate}</td>
                   <td>{offer.description}</td>
+                  <td>{offer.technology ? <Link to={`technology/${offer.technology.id}`}>{offer.technology.id}</Link> : ''}</td>
                   <td>{offer.employee ? <Link to={`employee/${offer.employee.id}`}>{offer.employee.id}</Link> : ''}</td>
                   <td>{offer.offerType ? <Link to={`offer-type/${offer.offerType.id}`}>{offer.offerType.id}</Link> : ''}</td>
                   <td className="text-right">

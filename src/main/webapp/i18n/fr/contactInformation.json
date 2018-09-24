@@ -25,11 +25,11 @@
             "phonePost": "Phone Post",
             "faxNumber": "Fax Number",
             "faxPost": "Fax Post",
-            "student": "Student",
             "country": "Country",
-            "entreprise": "Entreprise",
+            "student": "Student",
             "employee": "Employee",
-            "teacher": "Teacher"
+            "teacher": "Teacher",
+            "entreprise": "Entreprise"
         }
     }
 }

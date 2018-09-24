@@ -17,8 +17,8 @@
                 "title": "Country"
             },
             "name": "Name",
-            "contactInformation": "Contact Information",
-            "province": "Province"
+            "province": "Province",
+            "contactInformation": "Contact Information"
         }
     }
 }

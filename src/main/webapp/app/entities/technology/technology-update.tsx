@@ -8,8 +8,6 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IOffer } from 'app/shared/model/offer.model';
-import { getEntities as getOffers } from 'app/entities/offer/offer.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './technology.reducer';
 import { ITechnology } from 'app/shared/model/technology.model';
 // tslint:disable-next-line:no-unused-variable
@@ -20,14 +18,12 @@ export interface ITechnologyUpdateProps extends StateProps, DispatchProps, Route
 
 export interface ITechnologyUpdateState {
   isNew: boolean;
-  offerId: string;
 }
 
 export class TechnologyUpdate extends React.Component<ITechnologyUpdateProps, ITechnologyUpdateState> {
   constructor(props) {
     super(props);
     this.state = {
-      offerId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -38,8 +34,6 @@ export class TechnologyUpdate extends React.Component<ITechnologyUpdateProps, IT
     } else {
       this.props.getEntity(this.props.match.params.id);
     }
-
-    this.props.getOffers();
   }
 
   saveEntity = (event, errors, values) => {
@@ -64,7 +58,7 @@ export class TechnologyUpdate extends React.Component<ITechnologyUpdateProps, IT
   };
 
   render() {
-    const { technologyEntity, offers, loading, updating } = this.props;
+    const { technologyEntity, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -116,21 +110,6 @@ export class TechnologyUpdate extends React.Component<ITechnologyUpdateProps, IT
                     }}
                   />
                 </AvGroup>
-                <AvGroup>
-                  <Label for="offer.id">
-                    <Translate contentKey="redaApp.technology.offer">Offer</Translate>
-                  </Label>
-                  <AvInput id="technology-offer" type="select" className="form-control" name="offer.id">
-                    <option value="" key="0" />
-                    {offers
-                      ? offers.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/technology" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;
@@ -154,14 +133,12 @@ export class TechnologyUpdate extends React.Component<ITechnologyUpdateProps, IT
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  offers: storeState.offer.entities,
   technologyEntity: storeState.technology.entity,
   loading: storeState.technology.loading,
   updating: storeState.technology.updating
 });
 
 const mapDispatchToProps = {
-  getOffers,
   getEntity,
   updateEntity,
   createEntity,

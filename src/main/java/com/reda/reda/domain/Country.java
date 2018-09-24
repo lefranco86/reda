@@ -31,13 +31,13 @@ public class Country implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private ContactInformation contactInformation;
-
     @OneToMany(mappedBy = "country")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Province> provinces = new HashSet<>();
+
+    @OneToOne(mappedBy = "country")
+    @JsonIgnore
+    private ContactInformation contactInformation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -59,19 +59,6 @@ public class Country implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ContactInformation getContactInformation() {
-        return contactInformation;
-    }
-
-    public Country contactInformation(ContactInformation contactInformation) {
-        this.contactInformation = contactInformation;
-        return this;
-    }
-
-    public void setContactInformation(ContactInformation contactInformation) {
-        this.contactInformation = contactInformation;
     }
 
     public Set<Province> getProvinces() {
@@ -97,6 +84,19 @@ public class Country implements Serializable {
 
     public void setProvinces(Set<Province> provinces) {
         this.provinces = provinces;
+    }
+
+    public ContactInformation getContactInformation() {
+        return contactInformation;
+    }
+
+    public Country contactInformation(ContactInformation contactInformation) {
+        this.contactInformation = contactInformation;
+        return this;
+    }
+
+    public void setContactInformation(ContactInformation contactInformation) {
+        this.contactInformation = contactInformation;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -47,6 +47,10 @@ export class OfferDetail extends React.Component<IOfferDetailProps> {
             </dt>
             <dd>{offerEntity.description}</dd>
             <dt>
+              <Translate contentKey="redaApp.offer.technology">Technology</Translate>
+            </dt>
+            <dd>{offerEntity.technology ? offerEntity.technology.id : ''}</dd>
+            <dt>
               <Translate contentKey="redaApp.offer.employee">Employee</Translate>
             </dt>
             <dd>{offerEntity.employee ? offerEntity.employee.id : ''}</dd>

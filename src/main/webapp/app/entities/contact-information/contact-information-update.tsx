@@ -8,12 +8,10 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IStudent } from 'app/shared/model/student.model';
-import { getEntities as getStudents } from 'app/entities/student/student.reducer';
 import { ICountry } from 'app/shared/model/country.model';
 import { getEntities as getCountries } from 'app/entities/country/country.reducer';
-import { IEntreprise } from 'app/shared/model/entreprise.model';
-import { getEntities as getEntreprises } from 'app/entities/entreprise/entreprise.reducer';
+import { IStudent } from 'app/shared/model/student.model';
+import { getEntities as getStudents } from 'app/entities/student/student.reducer';
 import { IEmployee } from 'app/shared/model/employee.model';
 import { getEntities as getEmployees } from 'app/entities/employee/employee.reducer';
 import { ITeacher } from 'app/shared/model/teacher.model';
@@ -28,9 +26,8 @@ export interface IContactInformationUpdateProps extends StateProps, DispatchProp
 
 export interface IContactInformationUpdateState {
   isNew: boolean;
-  studentId: string;
   countryId: string;
-  entrepriseId: string;
+  studentId: string;
   employeeId: string;
   teacherId: string;
 }
@@ -39,9 +36,8 @@ export class ContactInformationUpdate extends React.Component<IContactInformatio
   constructor(props) {
     super(props);
     this.state = {
-      studentId: '0',
       countryId: '0',
-      entrepriseId: '0',
+      studentId: '0',
       employeeId: '0',
       teacherId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
@@ -55,9 +51,8 @@ export class ContactInformationUpdate extends React.Component<IContactInformatio
       this.props.getEntity(this.props.match.params.id);
     }
 
-    this.props.getStudents();
     this.props.getCountries();
-    this.props.getEntreprises();
+    this.props.getStudents();
     this.props.getEmployees();
     this.props.getTeachers();
   }
@@ -84,7 +79,7 @@ export class ContactInformationUpdate extends React.Component<IContactInformatio
   };
 
   render() {
-    const { contactInformationEntity, students, countries, entreprises, employees, teachers, loading, updating } = this.props;
+    const { contactInformationEntity, countries, students, employees, teachers, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -203,6 +198,21 @@ export class ContactInformationUpdate extends React.Component<IContactInformatio
                   </Label>
                   <AvField id="contact-information-faxPost" type="string" className="form-control" name="faxPost" />
                 </AvGroup>
+                <AvGroup>
+                  <Label for="country.id">
+                    <Translate contentKey="redaApp.contactInformation.country">Country</Translate>
+                  </Label>
+                  <AvInput id="contact-information-country" type="select" className="form-control" name="country.id">
+                    <option value="" key="0" />
+                    {countries
+                      ? countries.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.id}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/contact-information" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;
@@ -226,9 +236,8 @@ export class ContactInformationUpdate extends React.Component<IContactInformatio
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  students: storeState.student.entities,
   countries: storeState.country.entities,
-  entreprises: storeState.entreprise.entities,
+  students: storeState.student.entities,
   employees: storeState.employee.entities,
   teachers: storeState.teacher.entities,
   contactInformationEntity: storeState.contactInformation.entity,
@@ -237,9 +246,8 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getStudents,
   getCountries,
-  getEntreprises,
+  getStudents,
   getEmployees,
   getTeachers,
   getEntity,

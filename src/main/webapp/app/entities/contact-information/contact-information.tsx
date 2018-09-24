@@ -65,6 +65,9 @@ export class ContactInformation extends React.Component<IContactInformationProps
                 <th>
                   <Translate contentKey="redaApp.contactInformation.faxPost">Fax Post</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="redaApp.contactInformation.country">Country</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -85,6 +88,13 @@ export class ContactInformation extends React.Component<IContactInformationProps
                   <td>{contactInformation.phonePost}</td>
                   <td>{contactInformation.faxNumber}</td>
                   <td>{contactInformation.faxPost}</td>
+                  <td>
+                    {contactInformation.country ? (
+                      <Link to={`country/${contactInformation.country.id}`}>{contactInformation.country.id}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${contactInformation.id}`} color="info" size="sm">

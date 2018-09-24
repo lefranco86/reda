@@ -33,6 +33,10 @@
                 <constraints nullable="false" />
             </column>
 
+            <column name="technology_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <column name="employee_id" type="bigint">
                 <constraints nullable="true" />
             </column>

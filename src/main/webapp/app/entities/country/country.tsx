@@ -41,9 +41,6 @@ export class Country extends React.Component<ICountryProps> {
                 <th>
                   <Translate contentKey="redaApp.country.name">Name</Translate>
                 </th>
-                <th>
-                  <Translate contentKey="redaApp.country.contactInformation">Contact Information</Translate>
-                </th>
                 <th />
               </tr>
             </thead>
@@ -56,13 +53,6 @@ export class Country extends React.Component<ICountryProps> {
                     </Button>
                   </td>
                   <td>{country.name}</td>
-                  <td>
-                    {country.contactInformation ? (
-                      <Link to={`contact-information/${country.contactInformation.id}`}>{country.contactInformation.id}</Link>
-                    ) : (
-                      ''
-                    )}
-                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${country.id}`} color="info" size="sm">

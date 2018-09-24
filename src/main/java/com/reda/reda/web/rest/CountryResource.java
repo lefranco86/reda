@@ -17,6 +17,8 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing Country.
@@ -80,11 +82,19 @@ public class CountryResource {
     /**
      * GET  /countries : get all the countries.
      *
+     * @param filter the filter of the request
      * @return the ResponseEntity with status 200 (OK) and the list of countries in body
      */
     @GetMapping("/countries")
     @Timed
-    public List<Country> getAllCountries() {
+    public List<Country> getAllCountries(@RequestParam(required = false) String filter) {
+        if ("contactinformation-is-null".equals(filter)) {
+            log.debug("REST request to get all Countrys where contactInformation is null");
+            return StreamSupport
+                .stream(countryRepository.findAll().spliterator(), false)
+                .filter(country -> country.getContactInformation() == null)
+                .collect(Collectors.toList());
+        }
         log.debug("REST request to get all Countries");
         return countryRepository.findAll();
     }

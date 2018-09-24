@@ -18,10 +18,10 @@
     ],
     "relationships": [
         {
-            "relationshipType": "many-to-one",
+            "relationshipType": "one-to-many",
             "relationshipName": "offer",
             "otherEntityName": "offer",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "technology"
         }
     ],
     "changelogDate": "20180923171010",

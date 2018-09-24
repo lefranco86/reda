@@ -40,10 +40,6 @@ export class TechnologyDetail extends React.Component<ITechnologyDetailProps> {
               </span>
             </dt>
             <dd>{technologyEntity.description}</dd>
-            <dt>
-              <Translate contentKey="redaApp.technology.offer">Offer</Translate>
-            </dt>
-            <dd>{technologyEntity.offer ? technologyEntity.offer.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/technology" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -56,7 +56,9 @@
             <column name="fax_post" type="integer">
                 <constraints nullable="true" />
             </column>
-
+            <column name="country_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_contact_information_country_id" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         

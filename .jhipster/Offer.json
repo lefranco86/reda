@@ -26,6 +26,12 @@
         },
         {
             "relationshipType": "many-to-one",
+            "relationshipName": "technology",
+            "otherEntityName": "technology",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
             "relationshipName": "employee",
             "otherEntityName": "employee",
             "otherEntityField": "id"
@@ -35,12 +41,6 @@
             "relationshipName": "offerType",
             "otherEntityName": "offerType",
             "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "relationshipName": "technology",
-            "otherEntityName": "technology",
-            "otherEntityRelationshipName": "offer"
         }
     ],
     "changelogDate": "20180923171004",

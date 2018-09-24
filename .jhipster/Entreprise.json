@@ -11,12 +11,10 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-one",
+            "relationshipType": "many-to-one",
             "relationshipName": "contactInformation",
             "otherEntityName": "contactInformation",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "entreprise"
+            "otherEntityField": "id"
         },
         {
             "relationshipType": "one-to-many",

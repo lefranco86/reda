@@ -1,6 +1,7 @@
 package com.reda.reda.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -31,8 +32,8 @@ public class Entreprise implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties("entreprises")
     private ContactInformation contactInformation;
 
     @OneToMany(mappedBy = "entreprise")

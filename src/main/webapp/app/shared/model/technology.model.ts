@@ -4,7 +4,7 @@ export interface ITechnology {
   id?: number;
   name?: string;
   description?: string;
-  offer?: IOffer;
+  offers?: IOffer[];
 }
 
 export const defaultValue: Readonly<ITechnology> = {};

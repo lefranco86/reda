@@ -56,22 +56,16 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "student",
-            "otherEntityName": "student",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "contactInformation"
-        },
-        {
-            "relationshipType": "one-to-one",
             "relationshipName": "country",
             "otherEntityName": "country",
-            "ownerSide": false,
+            "otherEntityField": "id",
+            "ownerSide": true,
             "otherEntityRelationshipName": "contactInformation"
         },
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "entreprise",
-            "otherEntityName": "entreprise",
+            "relationshipName": "student",
+            "otherEntityName": "student",
             "ownerSide": false,
             "otherEntityRelationshipName": "contactInformation"
         },
@@ -87,6 +81,12 @@
             "relationshipName": "teacher",
             "otherEntityName": "teacher",
             "ownerSide": false,
+            "otherEntityRelationshipName": "contactInformation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "entreprise",
+            "otherEntityName": "entreprise",
             "otherEntityRelationshipName": "contactInformation"
         }
     ],

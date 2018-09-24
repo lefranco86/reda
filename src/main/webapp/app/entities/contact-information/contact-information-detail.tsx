@@ -83,6 +83,10 @@ export class ContactInformationDetail extends React.Component<IContactInformatio
               </span>
             </dt>
             <dd>{contactInformationEntity.faxPost}</dd>
+            <dt>
+              <Translate contentKey="redaApp.contactInformation.country">Country</Translate>
+            </dt>
+            <dd>{contactInformationEntity.country ? contactInformationEntity.country.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/contact-information" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

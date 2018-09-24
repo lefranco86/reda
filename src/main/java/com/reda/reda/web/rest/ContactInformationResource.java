@@ -95,20 +95,6 @@ public class ContactInformationResource {
                 .filter(contactInformation -> contactInformation.getStudent() == null)
                 .collect(Collectors.toList());
         }
-        if ("country-is-null".equals(filter)) {
-            log.debug("REST request to get all ContactInformations where country is null");
-            return StreamSupport
-                .stream(contactInformationRepository.findAll().spliterator(), false)
-                .filter(contactInformation -> contactInformation.getCountry() == null)
-                .collect(Collectors.toList());
-        }
-        if ("entreprise-is-null".equals(filter)) {
-            log.debug("REST request to get all ContactInformations where entreprise is null");
-            return StreamSupport
-                .stream(contactInformationRepository.findAll().spliterator(), false)
-                .filter(contactInformation -> contactInformation.getEntreprise() == null)
-                .collect(Collectors.toList());
-        }
         if ("employee-is-null".equals(filter)) {
             log.debug("REST request to get all ContactInformations where employee is null");
             return StreamSupport
