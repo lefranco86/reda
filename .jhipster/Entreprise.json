@@ -1,0 +1,37 @@
+{
+    "name": "Entreprise",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "contactInformations",
+            "otherEntityName": "contactInformation",
+            "otherEntityRelationshipName": "entreprise"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "employees",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "entreprise"
+        }
+    ],
+    "changelogDate": "20180923171000",
+    "entityTableName": "entreprise",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

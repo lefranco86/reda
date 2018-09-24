@@ -1,0 +1,10 @@
+{
+    "redaApp": {
+        "StudentOfferStatus" : {
+            "null": "",
+            "PENDING": "PENDING",
+            "ACCEPTED": "ACCEPTED",
+            "REFUSED": "REFUSED"
+        }
+    }
+}

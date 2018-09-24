@@ -1,0 +1,23 @@
+
+{
+    "redaApp": {
+        "offerType" : {
+            "home": {
+                "title": "OfferTypes",
+                "createLabel": "Créer un nouveau Offer Type",
+                "createOrEditLabel": "Créer ou éditer un Offer Type"
+            },
+            "created": "Un nouveau Offer Type a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Offer Type avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Offer Type avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Offer Type {{ id }} ?"
+            },
+            "detail": {
+                "title": "Offer Type"
+            },
+            "description": "Description",
+            "offer": "Offer"
+        }
+    }
+}

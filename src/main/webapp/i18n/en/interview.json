@@ -1,0 +1,25 @@
+
+{
+    "redaApp": {
+        "interview" : {
+            "home": {
+                "title": "Interviews",
+                "createLabel": "Create a new Interview",
+                "createOrEditLabel": "Create or edit a Interview"
+            },
+            "created": "A new Interview is created with identifier {{ param }}",
+            "updated": "A Interview is updated with identifier {{ param }}",
+            "deleted": "A Interview is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Interview {{ id }}?"
+            },
+            "detail": {
+                "title": "Interview"
+            },
+            "date": "Date",
+            "result": "Result",
+            "internship": "Internship",
+            "studentOffer": "Student Offer"
+        }
+    }
+}

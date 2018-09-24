@@ -1,0 +1,76 @@
+{
+    "name": "Student",
+    "fields": [
+        {
+            "fieldName": "registrationNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 7,
+            "fieldValidateRulesMaxlength": 7
+        },
+        {
+            "fieldName": "firstname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "contactInformation",
+            "otherEntityName": "contactInformation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "student"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cohort",
+            "otherEntityName": "cohort",
+            "otherEntityRelationshipName": "student"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "studentOffer",
+            "otherEntityName": "studentOffer",
+            "otherEntityRelationshipName": "student"
+        }
+    ],
+    "changelogDate": "20180923170956",
+    "entityTableName": "student",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,55 @@
+{
+    "name": "Internship",
+    "fields": [
+        {
+            "fieldName": "hourlyRate",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "weeklyHour",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "specialRate",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "start",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "end",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "documents",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "internship"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "interview",
+            "otherEntityName": "interview",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180923171007",
+    "entityTableName": "internship",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

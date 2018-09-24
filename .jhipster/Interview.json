@@ -1,0 +1,39 @@
+{
+    "name": "Interview",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "result",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "internship",
+            "otherEntityName": "internship",
+            "otherEntityRelationshipName": "interview"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "studentOffer",
+            "otherEntityName": "studentOffer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180923171006",
+    "entityTableName": "interview",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

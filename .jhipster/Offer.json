@@ -1,0 +1,56 @@
+{
+    "name": "Offer",
+    "fields": [
+        {
+            "fieldName": "weeklyHour",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hourlyRate",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "studentOffer",
+            "otherEntityName": "studentOffer",
+            "otherEntityRelationshipName": "offer"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "type",
+            "otherEntityName": "offerType",
+            "otherEntityField": "description"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "technologies",
+            "otherEntityName": "technology",
+            "otherEntityRelationshipName": "offer"
+        }
+    ],
+    "changelogDate": "20180923171004",
+    "entityTableName": "offer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "OfferType",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "offer",
+            "otherEntityName": "offer",
+            "otherEntityRelationshipName": "type"
+        }
+    ],
+    "changelogDate": "20180923171011",
+    "entityTableName": "offer_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

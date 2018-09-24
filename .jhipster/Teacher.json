@@ -1,0 +1,63 @@
+{
+    "name": "Teacher",
+    "fields": [
+        {
+            "fieldName": "registrationNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 7,
+            "fieldValidateRulesMaxlength": 7
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "firstname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "contactInformation",
+            "otherEntityName": "contactInformation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "teacher"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cohort",
+            "otherEntityName": "cohort",
+            "otherEntityRelationshipName": "teacher"
+        }
+    ],
+    "changelogDate": "20180923171002",
+    "entityTableName": "teacher",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

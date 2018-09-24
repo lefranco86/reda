@@ -1,0 +1,39 @@
+{
+    "name": "StudentOffer",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StudentOfferStatus",
+            "fieldValues": "PENDING,ACCEPTED,REFUSED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "interview",
+            "otherEntityName": "interview",
+            "otherEntityRelationshipName": "studentOffer"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "offer",
+            "otherEntityName": "offer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180923171005",
+    "entityTableName": "student_offer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

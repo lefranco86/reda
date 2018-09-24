@@ -38,6 +38,37 @@ public class CacheConfiguration {
             cm.createCache(com.reda.reda.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Student.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Student.class.getName() + ".cohorts", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Student.class.getName() + ".studentOffers", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.ContactInformation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Country.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Country.class.getName() + ".provinces", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Province.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Entreprise.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Entreprise.class.getName() + ".contactInformations", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Entreprise.class.getName() + ".employees", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Employee.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Employee.class.getName() + ".offers", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Teacher.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Teacher.class.getName() + ".cohorts", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Cohort.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Offer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Offer.class.getName() + ".studentOffers", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.StudentOffer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.StudentOffer.class.getName() + ".interviews", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Interview.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Interview.class.getName() + ".internships", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Internship.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Internship.class.getName() + ".documents", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Document.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.DocumentType.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.DocumentType.class.getName() + ".documents", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Technology.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Technology.class.getName() + ".offers", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.OfferType.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.OfferType.class.getName() + ".offers", jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.Offer.class.getName() + ".technologies", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

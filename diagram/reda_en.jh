@@ -93,5 +93,5 @@ relationship OneToMany { StudentOffer to Interview{studentOffer}}
 relationship OneToMany { Interview to Internship{interview}}
 relationship OneToMany { Internship{documents(name) required} to Document{internship}}
 relationship OneToMany { DocumentType to Document{type(description)}}
-relationship ManyToOne { Technology to Offer{technologies required}}
+relationship ManyToOne { Technology{offer} to Offer{technologies required}}
 relationship OneToMany { OfferType to Offer{type(description)}}

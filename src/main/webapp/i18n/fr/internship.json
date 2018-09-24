@@ -1,0 +1,28 @@
+
+{
+    "redaApp": {
+        "internship" : {
+            "home": {
+                "title": "Internships",
+                "createLabel": "Créer un nouveau Internship",
+                "createOrEditLabel": "Créer ou éditer un Internship"
+            },
+            "created": "Un nouveau Internship a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Internship avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Internship avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Internship {{ id }} ?"
+            },
+            "detail": {
+                "title": "Internship"
+            },
+            "hourlyRate": "Hourly Rate",
+            "weeklyHour": "Weekly Hour",
+            "specialRate": "Special Rate",
+            "start": "Start",
+            "end": "End",
+            "documents": "Documents",
+            "interview": "Interview"
+        }
+    }
+}

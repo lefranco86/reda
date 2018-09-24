@@ -7,6 +7,22 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "student": "Student",
+                "contactInformation": "Contact Information",
+                "country": "Country",
+                "province": "Province",
+                "entreprise": "Entreprise",
+                "employee": "Employee",
+                "teacher": "Teacher",
+                "cohort": "Cohort",
+                "offer": "Offer",
+                "studentOffer": "Student Offer",
+                "interview": "Interview",
+                "internship": "Internship",
+                "document": "Document",
+                "documentType": "Document Type",
+                "technology": "Technology",
+                "offerType": "Offer Type",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

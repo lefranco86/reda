@@ -1,0 +1,32 @@
+
+{
+    "redaApp": {
+        "contactInformation" : {
+            "home": {
+                "title": "ContactInformations",
+                "createLabel": "Créer un nouveau Contact Information",
+                "createOrEditLabel": "Créer ou éditer un Contact Information"
+            },
+            "created": "Un nouveau Contact Information a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Contact Information avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Contact Information avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Contact Information {{ id }} ?"
+            },
+            "detail": {
+                "title": "Contact Information"
+            },
+            "street": "Street",
+            "civicNumber": "Civic Number",
+            "city": "City",
+            "postalCode": "Postal Code",
+            "apartment": "Apartment",
+            "phoneNumber": "Phone Number",
+            "phonePost": "Phone Post",
+            "faxNumber": "Fax Number",
+            "faxPost": "Fax Post",
+            "country": "Country",
+            "entreprise": "Entreprise"
+        }
+    }
+}

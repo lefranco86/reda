@@ -5,6 +5,35 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170956_added_entity_Student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170957_added_entity_ContactInformation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170958_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170959_added_entity_Province.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171000_added_entity_Entreprise.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171001_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171002_added_entity_Teacher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171003_added_entity_Cohort.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171004_added_entity_Offer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171005_added_entity_StudentOffer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171006_added_entity_Interview.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171007_added_entity_Internship.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171008_added_entity_Document.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171009_added_entity_DocumentType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171010_added_entity_Technology.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171011_added_entity_OfferType.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180923170956_added_entity_constraints_Student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170957_added_entity_constraints_ContactInformation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170958_added_entity_constraints_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923170959_added_entity_constraints_Province.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171001_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171002_added_entity_constraints_Teacher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171003_added_entity_constraints_Cohort.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171004_added_entity_constraints_Offer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171005_added_entity_constraints_StudentOffer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171006_added_entity_constraints_Interview.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171007_added_entity_constraints_Internship.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171008_added_entity_constraints_Document.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180923171010_added_entity_constraints_Technology.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

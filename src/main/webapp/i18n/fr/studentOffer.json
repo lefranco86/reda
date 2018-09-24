@@ -1,0 +1,25 @@
+
+{
+    "redaApp": {
+        "studentOffer" : {
+            "home": {
+                "title": "StudentOffers",
+                "createLabel": "Créer un nouveau Student Offer",
+                "createOrEditLabel": "Créer ou éditer un Student Offer"
+            },
+            "created": "Un nouveau Student Offer a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Student Offer avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Student Offer avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Student Offer {{ id }} ?"
+            },
+            "detail": {
+                "title": "Student Offer"
+            },
+            "status": "Status",
+            "interview": "Interview",
+            "offer": "Offer",
+            "student": "Student"
+        }
+    }
+}

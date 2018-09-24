@@ -1,0 +1,24 @@
+
+{
+    "redaApp": {
+        "cohort" : {
+            "home": {
+                "title": "Cohorts",
+                "createLabel": "Créer un nouveau Cohort",
+                "createOrEditLabel": "Créer ou éditer un Cohort"
+            },
+            "created": "Un nouveau Cohort a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cohort avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cohort avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cohort {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cohort"
+            },
+            "startDate": "Start Date",
+            "teacher": "Teacher",
+            "student": "Student"
+        }
+    }
+}
