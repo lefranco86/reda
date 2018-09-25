@@ -17,7 +17,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20180923170959",
+    "changelogDate": "20180925145723",
     "entityTableName": "province",
     "dto": "no",
     "pagination": "no",

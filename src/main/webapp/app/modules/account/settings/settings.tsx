@@ -115,7 +115,8 @@ export class SettingsPage extends React.Component<IUserSettingsProps, IUserSetti
 }
 
 const mapStateToProps = ({ authentication }: IRootState) => ({
-  account: authentication.account
+  account: authentication.account,
+  isAuthenticated: authentication.isAuthenticated
 });
 
 const mapDispatchToProps = { getSession, saveAccountSettings, reset };

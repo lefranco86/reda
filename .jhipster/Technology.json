@@ -24,7 +24,7 @@
             "otherEntityRelationshipName": "technology"
         }
     ],
-    "changelogDate": "20180923171010",
+    "changelogDate": "20180925145734",
     "entityTableName": "technology",
     "dto": "no",
     "pagination": "no",

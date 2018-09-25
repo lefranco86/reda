@@ -23,7 +23,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20180923171003",
+    "changelogDate": "20180925145727",
     "entityTableName": "cohort",
     "dto": "no",
     "pagination": "no",

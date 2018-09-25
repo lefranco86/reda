@@ -1,7 +1,7 @@
 {
   "name": "reda",
-  "version": "0.0.1",
-  "description": "Redistribution des Emplois D'été Automatique",
+  "version": "0.0.0",
+  "description": "Description for reda",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

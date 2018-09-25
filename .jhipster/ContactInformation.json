@@ -90,7 +90,7 @@
             "otherEntityRelationshipName": "contactInformation"
         }
     ],
-    "changelogDate": "20180923170957",
+    "changelogDate": "20180925145721",
     "entityTableName": "contact_information",
     "dto": "no",
     "pagination": "no",

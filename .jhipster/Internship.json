@@ -42,7 +42,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20180923171007",
+    "changelogDate": "20180925145731",
     "entityTableName": "internship",
     "dto": "no",
     "pagination": "no",

@@ -52,7 +52,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20180923171001",
+    "changelogDate": "20180925145725",
     "entityTableName": "employee",
     "dto": "no",
     "pagination": "no",

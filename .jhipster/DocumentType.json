@@ -17,7 +17,7 @@
             "otherEntityRelationshipName": "documentType"
         }
     ],
-    "changelogDate": "20180923171009",
+    "changelogDate": "20180925145733",
     "entityTableName": "document_type",
     "dto": "no",
     "pagination": "no",

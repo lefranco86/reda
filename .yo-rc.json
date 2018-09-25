@@ -1,37 +1,38 @@
 {
   "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.reda.reda",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.3.4",
     "applicationType": "monolith",
-    "gitCompany": "",
-    "baseName": "REDA",
+    "baseName": "reda",
     "packageName": "com.reda.reda",
     "packageFolder": "com/reda/reda",
-    "serverPort": 8080,
-    "serviceDiscoveryType": false,
+    "serverPort": "8080",
     "authenticationType": "jwt",
-    "uaaBaseName": "../uaa",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
+    "devDatabaseType": "h2Memory",
     "prodDatabaseType": "postgresql",
     "searchEngine": false,
-    "enableSwaggerCodegen": false,
     "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NjI2OTRiZjAzYjI2YmI3YzAxYTc5YzZhMjA5MTg2MGRlNzhiMjE2N2FlNjIwNmI1N2NmZTExZDhkODZlZjhiNmU3NDkzNWRjNTFkMTIxMTAzOTRjZjRmZDM0Y2Q3MGM4OTI0MmQ5OTczZTc5MGM5ZjkxODY1ODM0NDhkZjg3OTU=",
+    "clientFramework": "react",
     "useSass": true,
     "clientPackageManager": "npm",
     "testFrameworks": [],
+    "jhiPrefix": "jhi",
     "enableTranslation": true,
-    "nativeLanguage": "fr",
+    "nativeLanguage": "en",
     "languages": [
       "en",
       "fr"
-    ],
-    "clientFramework": "react",
-    "jhiPrefix": "jhi"
-  },
-  "git-provider": "GitHub",
-  "git-company": "lefranco86",
-  "repository-name": "reda"
+    ]
+  }
 }

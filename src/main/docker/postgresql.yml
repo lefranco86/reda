@@ -3,9 +3,9 @@ services:
     reda-postgresql:
         image: postgres:10.4
         # volumes:
-        #     - ~/volumes/jhipster/REDA/postgresql/:/var/lib/postgresql/data/
+        #     - ~/volumes/jhipster/reda/postgresql/:/var/lib/postgresql/data/
         environment:
-            - POSTGRES_USER=REDA
+            - POSTGRES_USER=reda
             - POSTGRES_PASSWORD=
         ports:
             - 5432:5432

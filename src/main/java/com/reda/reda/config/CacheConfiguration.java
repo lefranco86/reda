@@ -10,6 +10,9 @@ import io.github.jhipster.config.JHipsterProperties;
 
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.context.annotation.*;
 
 @Configuration
@@ -42,11 +45,11 @@ public class CacheConfiguration {
             cm.createCache(com.reda.reda.domain.Student.class.getName() + ".cohorts", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Student.class.getName() + ".studentOffers", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.ContactInformation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.reda.reda.domain.ContactInformation.class.getName() + ".entreprises", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Country.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Country.class.getName() + ".provinces", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Province.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Entreprise.class.getName(), jcacheConfiguration);
-            cm.createCache(com.reda.reda.domain.Entreprise.class.getName() + ".contactInformations", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Entreprise.class.getName() + ".employees", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Employee.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.Employee.class.getName() + ".offers", jcacheConfiguration);
@@ -68,8 +71,6 @@ public class CacheConfiguration {
             cm.createCache(com.reda.reda.domain.Technology.class.getName() + ".offers", jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.OfferType.class.getName(), jcacheConfiguration);
             cm.createCache(com.reda.reda.domain.OfferType.class.getName() + ".offers", jcacheConfiguration);
-            cm.createCache(com.reda.reda.domain.Offer.class.getName() + ".technologies", jcacheConfiguration);
-            cm.createCache(com.reda.reda.domain.ContactInformation.class.getName() + ".entreprises", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

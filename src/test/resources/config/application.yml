@@ -13,15 +13,21 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+    client:
+        enabled: false
+    instance:
+        appname: reda
+        instanceId: reda:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: REDA
+        name: reda
     cache:
         type: simple
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:REDA;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        url: jdbc:h2:mem:reda;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         name:
         username:
         password:
@@ -90,7 +96,7 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: ZTk1MDhkZmI0Yjk2MTFjY2M4YWU4ZWYzZmU4M2EyYTczOTRjNDFlZGYxMGI2OGFmOTI4OWRjZTBmNDNjYzVkNTdjNGViNzBjYjNiOWQ4NzdjNDIzMDNlZjRiYjk3MTZkN2NiNzgxNzVhMTcxNDhjMzFhZTNiZTViMmExYjc0NzE=
+                base64-secret: NjI2OTRiZjAzYjI2YmI3YzAxYTc5YzZhMjA5MTg2MGRlNzhiMjE2N2FlNjIwNmI1N2NmZTExZDhkODZlZjhiNmU3NDkzNWRjNTFkMTIxMTAzOTRjZjRmZDM0Y2Q3MGM4OTI0MmQ5OTczZTc5MGM5ZjkxODY1ODM0NDhkZjg3OTU=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

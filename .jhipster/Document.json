@@ -31,7 +31,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20180923171008",
+    "changelogDate": "20180925145732",
     "entityTableName": "document",
     "dto": "no",
     "pagination": "no",

@@ -27,7 +27,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20180923171005",
+    "changelogDate": "20180925145729",
     "entityTableName": "student_offer",
     "dto": "no",
     "pagination": "no",

@@ -17,7 +17,7 @@
             "otherEntityRelationshipName": "offerType"
         }
     ],
-    "changelogDate": "20180923171011",
+    "changelogDate": "20180925145735",
     "entityTableName": "offer_type",
     "dto": "no",
     "pagination": "no",
