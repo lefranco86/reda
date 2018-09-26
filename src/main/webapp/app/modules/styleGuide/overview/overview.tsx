@@ -5,155 +5,71 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Translate } from 'react-jhipster';
 import { connect } from 'react-redux';
-import { Row, Col, Alert, Button, Label, FormGroup, Card, CardBody, CardTitle, CardSubtitle, CardFooter } from 'reactstrap';
-import { AvForm, AvField, AvGroup, AvInput, AvFeedback, AvRadioGroup, AvRadio } from 'availity-reactstrap-validation';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
+import Form from './form/form';
 
 import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
 import Highlight from 'react-highlight';
 
 export interface IOverviewProp extends StateProps, DispatchProps {}
+export interface IOverviewState {
+  activeTab: string;
+}
 
-export class Overview extends React.Component<IOverviewProp> {
-  componentDidMount() {
-    this.props.getSession();
+export class Overview extends React.Component<IOverviewProp, IOverviewState> {
+  constructor(props) {
+    super(props);
+    this.state = { activeTab: '1' };
   }
 
+  private toggle = (tab: string) => () => {
+    if (this.state.activeTab !== tab) {
+      this.setState({
+        activeTab: tab
+      });
+    }
+  };
+
   render() {
-    const { account } = this.props;
     return (
       <div>
-        <Row>
-          <Col>
-            <Card>
-              <CardBody>
-                <CardTitle>Formulaire</CardTitle>
-                <CardSubtitle>Aspect</CardSubtitle>
-              </CardBody>
-              <CardBody>
-                <Row>
-                  <Col>
-                    <AvForm>
-                      {/* With AvField */}
-                      <AvField name="name" label="Name" required />
-                      {/* With AvGroup AvInput and AvFeedback to build your own */}
-                      <AvGroup>
-                        <Label for="example">Rank</Label>
-                        <AvInput name="rank" id="example" required />
-                        <AvFeedback>This is an error!</AvFeedback>
-                      </AvGroup>
-                      {/* Radios */}
-                      <AvRadioGroup name="radioExample" label="Radio Buttons!" required errorMessage="Pick one!">
-                        <AvRadio label="Bulbasaur" value="Bulbasaur" />
-                        <AvRadio label="Squirtle" value="Squirtle" />
-                        <AvRadio label="Charmander" value="Charmander" />
-                        <AvRadio label="Pikachu" value="Pikachu" disabled />
-                      </AvRadioGroup>
-
-                      <AvRadioGroup inline name="radioExample2" label="Radio Buttons! (inline)" required>
-                        <AvRadio label="Bulbasaur" value="Bulbasaur" />
-                        <AvRadio label="Squirtle" value="Squirtle" />
-                        <AvRadio label="Charmander" value="Charmander" />
-                        <AvRadio label="Pikachu" value="Pikachu" disabled />
-                      </AvRadioGroup>
-                      {/* With select and AvField */}
-                      <AvField type="select" name="select" label="Option" helpMessage="Idk, this is an example. Deal with it!">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </AvField>
-
-                      <AvField type="select" name="select-multiple" label="Option" helpMessage="MULTIPLE!" multiple>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </AvField>
-                      <FormGroup>
-                        <Button>Submit</Button>
-                      </FormGroup>
-                    </AvForm>
-                  </Col>
-                </Row>
-              </CardBody>
-              <CardFooter className="text-muted">Footer</CardFooter>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <CardBody>
-                <CardTitle>Formulaire</CardTitle>
-                <CardSubtitle>TypeScript</CardSubtitle>
-              </CardBody>
-              <CardBody>
-                <Row>
-                  <Col>
-                    <Highlight language="TypeScript">
-                      {`<Card>
-  <CardBody>
-    <CardTitle>Card title</CardTitle>
-    <CardSubtitle>test</CardSubtitle>
-  </CardBody>
-  <CardBody>
-    <Row>
-      <Col>
-        <AvForm>
-          {/* With AvField */}
-          <AvField name="name" label="Name" required />
-          {/* With AvGroup AvInput and AvFeedback to build your own */}
-          <AvGroup>
-            <Label for="example">Rank</Label>
-            <AvInput name="rank" id="example" required />
-            <AvFeedback>This is an error!</AvFeedback>
-          </AvGroup>
-          {/* Radios */}
-          <AvRadioGroup name="radioExample" label="Radio Buttons!" required errorMessage="Pick one!">
-            <AvRadio label="Bulbasaur" value="Bulbasaur" />
-            <AvRadio label="Squirtle" value="Squirtle" />
-            <AvRadio label="Charmander" value="Charmander" />
-            <AvRadio label="Pikachu" value="Pikachu" disabled />
-          </AvRadioGroup>
-          <AvRadioGroup inline name="radioExample2" label="Radio Buttons! (inline)" required>
-            <AvRadio label="Bulbasaur" value="Bulbasaur" />
-            <AvRadio label="Squirtle" value="Squirtle" />
-            <AvRadio label="Charmander" value="Charmander" />
-            <AvRadio label="Pikachu" value="Pikachu" disabled />
-          </AvRadioGroup>
-          {/* With select and AvField */}
-          <AvField type="select" name="select" label="Option" helpMessage="Idk, this is an example. Deal with it!">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </AvField>
-          <AvField type="select" name="select-multiple" label="Option" helpMessage="MULTIPLE!" multiple>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </AvField>
-          <FormGroup>
-            <Button>Submit</Button>
-          </FormGroup>
-        </AvForm>
-      </Col>
-    </Row>
-  </CardBody>
-  <CardFooter className="text-muted">Footer</CardFooter>
-</Card>`}
-                    </Highlight>
-                  </Col>
-                </Row>
-              </CardBody>
-              <CardFooter className="text-muted">Footer</CardFooter>
-            </Card>
-          </Col>
-        </Row>
+        <Nav tabs>
+          <NavItem>
+            <NavLink className={classnames({ active: this.state.activeTab === '1' })} onClick={this.toggle('1')}>
+              Formulaire
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className={classnames({ active: this.state.activeTab === '2' })} onClick={this.toggle('2')}>
+              Moar Tabs
+            </NavLink>
+          </NavItem>
+        </Nav>
+        <TabContent activeTab={this.state.activeTab}>
+          <TabPane tabId="1">
+            <Form />
+          </TabPane>
+          <TabPane tabId="2">
+            <Row>
+              <Col sm="6">
+                <Card body>
+                  <CardTitle>Special Title Treatment</CardTitle>
+                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                  <Button>Go somewhere</Button>
+                </Card>
+              </Col>
+              <Col sm="6">
+                <Card body>
+                  <CardTitle>Special Title Treatment</CardTitle>
+                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                  <Button>Go somewhere</Button>
+                </Card>
+              </Col>
+            </Row>
+          </TabPane>
+        </TabContent>
       </div>
     );
   }
