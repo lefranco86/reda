@@ -29,6 +29,11 @@ const Student = Loadable({
   loader: () => import(/* webpackChunkName: "student" */ 'app/modules/student'),
   loading: () => <div>loading ...</div>
 });
+
+const StyleGuide = Loadable({
+  loader: () => import(/* webpackChunkName: "styleGuide" */ 'app/modules/styleGuide'),
+  loading: () => <div>loading ...</div>
+});
 // tslint:enable
 
 const Routes = () => (
@@ -44,6 +49,7 @@ const Routes = () => (
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/student" component={Student} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.STUDENT]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
+      <PrivateRoute path="/styleGuide" component={StyleGuide} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
       <ErrorBoundaryRoute path="/" component={Home} />
     </Switch>
   </div>

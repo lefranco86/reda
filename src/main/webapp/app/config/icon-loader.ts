@@ -1,3 +1,4 @@
+// import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faSort } from '@fortawesome/free-solid-svg-icons/faSort';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
 import { faSync } from '@fortawesome/free-solid-svg-icons/faSync';
@@ -28,6 +29,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 import { faRoad } from '@fortawesome/free-solid-svg-icons/faRoad';
 import { faCloud } from '@fortawesome/free-solid-svg-icons/faCloud';
+import { faBible } from '@fortawesome/free-solid-svg-icons';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -62,6 +64,7 @@ export const loadIcons = () => {
     faRoad,
     faCloud,
     faTimesCircle,
+    faBible,
     faSearch
   );
 };
