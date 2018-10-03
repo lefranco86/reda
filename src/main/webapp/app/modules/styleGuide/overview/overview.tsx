@@ -8,6 +8,13 @@ import { connect } from 'react-redux';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import Form from './form/form';
+import Base from './button/base';
+import Large from './button/large';
+import Small from './button/small';
+import Block from './button/block';
+import Active from './button/active';
+import Disabled from './button/disabled';
+import Outline from 'app/modules/styleGuide/overview/button/outline';
 
 import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
@@ -43,7 +50,7 @@ export class Overview extends React.Component<IOverviewProp, IOverviewState> {
           </NavItem>
           <NavItem>
             <NavLink className={classnames({ active: this.state.activeTab === '2' })} onClick={this.toggle('2')}>
-              Moar Tabs
+              ButtonStyle
             </NavLink>
           </NavItem>
         </Nav>
@@ -52,22 +59,13 @@ export class Overview extends React.Component<IOverviewProp, IOverviewState> {
             <Form />
           </TabPane>
           <TabPane tabId="2">
-            <Row>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-            </Row>
+            <Base />
+            <Outline />
+            <Large />
+            <Small />
+            <Block />
+            <Active />
+            <Disabled />
           </TabPane>
         </TabContent>
       </div>
